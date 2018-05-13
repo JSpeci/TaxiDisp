@@ -6,7 +6,8 @@ export interface IStavUzivatele{
 
 export class ApiRequest {
     url: string;
-    urlPrefix: string = "/TaxiDisp/src";
+    urlPrefix: string = "";     /*pro webhosting endora*/
+    urlPrefix2: string = "/TaxiDisp/src";
 
     constructor(url: string) {
         this.url = url;
