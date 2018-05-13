@@ -1,16 +1,105 @@
 import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { observable, computed, action } from 'mobx';
+import { observer, inject } from 'mobx-react';
+import { Provider } from 'mobx-react';
+import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
+import { Model } from './index';
+
+import { ApiRequest, IStavUzivatele } from './ApiRequest';
 
 export interface AppProps {
-  
+
 }
 
+
+
 export default class App extends React.Component<AppProps> {
+
+
+
+  constructor(props: AppProps) {
+    super(props);
+
+  }
+
   public render() {
+
     return (
-      <div className="App">
-          To get started, edit <code>PK  US</code> and save to reload.
-      </div>
-    ); 
+
+        <Router>
+          <div className="App">
+
+            <ul>
+              <li><Link to='/'>Home</Link></li>
+              <li><Link to='/about'>About</Link></li>
+              <li><Link to='/topics'>Topics</Link></li>
+
+            </ul>
+
+            <hr />
+
+            <Route exact path='/' component={Home} />
+            <Route path='/about' component={About} />
+            <Route path='/topics' component={Topics} />
+
+          </div>
+        </Router>
+      
+    );
   }
 }
+
+
+@inject('modelStore')
+@observer
+export class Home extends React.Component {
+
+  constructor(props: any) {
+    super(props);
+  }
+
+  clicked() {
+    console.log("clicked");
+    this.props.modelStore.pop();
+  }
+
+  clicked2() {
+    console.log("clicked2");
+    this.props.modelStore.reload();
+  }
+
+  public render() {
+
+    return (
+      <div className="stavy">
+        <button onClick={() => this.clicked()}>POP</button>
+        <button onClick={() => this.clicked2()}>Reload</button>
+        <span>{JSON.stringify(this.props.modelStore.array)}</span>
+      </div>
+    );
+  }
+}
+
+export class About extends React.Component {
+
+  public render() {
+
+    return (
+      "About"
+    );
+  }
+}
+
+export class Topics extends React.Component {
+
+  public render() {
+
+    return (
+      "Topics"
+    );
+  }
+}
+
+
 
