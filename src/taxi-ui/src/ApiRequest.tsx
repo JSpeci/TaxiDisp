@@ -23,12 +23,11 @@ export class ApiRequest {
             headers: myHeaders
         };
 
-        return fetch(this.urlPrefix + '/public/StavUzivatele', myInit).then((response) => {
+        return fetch(this.urlPrefix2 + '/public/StavUzivatele', myInit).then((response) => {
             return response.json();
         }).then((data) => {
             console.log(data);
             return data;
         });
     }
-
 }

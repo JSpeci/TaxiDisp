@@ -16,15 +16,12 @@ export interface AppProps {
 
 export default class App extends React.Component<AppProps> {
 
-
-
   constructor(props: AppProps) {
     super(props);
 
   }
 
   public render() {
-
     return (
 
         <Router>
@@ -50,10 +47,13 @@ export default class App extends React.Component<AppProps> {
   }
 }
 
+export interface HomeProps{
+  modelStore: Model;
+}
 
 @inject('modelStore')
 @observer
-export class Home extends React.Component {
+export class Home extends React.Component<HomeProps> {
 
   constructor(props: any) {
     super(props);
@@ -61,6 +61,7 @@ export class Home extends React.Component {
 
   clicked() {
     console.log("clicked");
+    console.log(this.props.modelStore);
     this.props.modelStore.pop();
   }
 
@@ -100,6 +101,7 @@ export class Topics extends React.Component {
     );
   }
 }
+
 
 
 
