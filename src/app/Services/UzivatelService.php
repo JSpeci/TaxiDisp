@@ -1,15 +1,13 @@
 <?php
-
 namespace App\Services;
 
 use App\Services\AService;
 use App\Models\Uzivatel;
 use PDO;
-
 /**
- * UzivatelService - servisni objekt dodavajici data z databaze kontroleru pomoci DTO
- *
- * @author King
+ * UzivatelService - servisni objekt dodavajici 
+ * data z databaze kontroleru pomoci DTO
+ * @author Jan Špecián
  */
 class UzivatelService extends AService {
 

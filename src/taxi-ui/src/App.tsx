@@ -28,7 +28,7 @@ export default class App extends React.Component<AppProps> {
           <div className="App">
 
             <ul>
-              <li><Link to='/'>Home</Link></li>
+              <li><Link to='/'>Homeee</Link></li>
               <li><Link to='/about'>About</Link></li>
               <li><Link to='/topics'>Topics</Link></li>
 

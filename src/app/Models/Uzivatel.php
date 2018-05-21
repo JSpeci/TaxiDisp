@@ -18,12 +18,17 @@ class Uzivatel implements \JsonSerializable {
     private $celeJmeno;
     private $role;
     
-    function __construct($nickName, $login, $celeJmeno, RoleUzivatele $role, $id = null) {
+    function __construct($nickName, $login, $celeJmeno, 
+                            RoleUzivatele $role, $id = null) {
         $this->id = $id;
         $this->nickName = $nickName;
         $this->login = $login;
         $this->celeJmeno = $celeJmeno;
         $this->role = $role;
+    }
+
+    public function jsonSerialize() {
+        return get_object_vars($this);
     }
     
     function getId() {
@@ -45,9 +50,4 @@ class Uzivatel implements \JsonSerializable {
     function getRole() {
         return $this->role;
     }
-
-    public function jsonSerialize() {
-        return get_object_vars($this);
-    }
-
 }

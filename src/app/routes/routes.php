@@ -10,9 +10,7 @@ use App\Controllers\LogStavuController;
 
 /*
   require '../app/controllers/ApiController.php';
-
   require '../app/controllers/HomeController.php';
-
   /*
   require '../app/controllers/UzivatelController.php'; */
 
