@@ -5,36 +5,18 @@ import { observable, computed, action } from 'mobx';
 import { observer, inject } from 'mobx-react';
 import { Provider } from 'mobx-react';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
-import { ApiRequest, IStavUzivatele } from './ApiRequest';
+import { ApiRequest } from './Utils/ApiRequest';
+import { ObjednavkyModel } from './Models/ObjednavkyModel';
+import { StavUzivatele } from './Utils/Interfaces';
+import { StavUzivateleModel } from './Models/StavUzivateleModel';
+import { UzivateleModel } from './Models/UzivateleModel';
 
-export class Model {
-
-  @observable array: IStavUzivatele[];
-
-  constructor() {
-    this.load();
-  }
-
-  pop() {
-    this.array.pop();
-    console.log("popped");
-  }
-
-  reload() {
-    this.load();
-    console.log("reloaded");
-  }
-
-  async load() {
-    let apiRequester = new ApiRequest("http://localhost:50062/");
-    await apiRequester.getStav().then(data => { this.array = data });
-  }
-
-}
-const stores = { Model };
+const apiRequest = new ApiRequest();
 
 ReactDOM.render(
-  <Provider  modelStore={new Model()}>
+  <Provider modelStore={new StavUzivateleModel(apiRequest)}
+            objednavkyStore={new ObjednavkyModel(apiRequest)}
+            uzivateleStore={new UzivateleModel(apiRequest)}>
     <App />
   </Provider>,
   document.getElementById('root') as HTMLElement

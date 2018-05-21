@@ -1,19 +1,17 @@
+import { StavUzivatele, Objednavka, Uzivatel } from "./Interfaces";
 
-export interface IStavUzivatele{
-    id: string;
-    nazevStavu: string;
-}
 
 export class ApiRequest {
     url: string;
-    urlPrefix: string = "";     /*pro webhosting endora*/
-    urlPrefix2: string = "/TaxiDisp/src";
+    urlPrefix: string;     /*pro webhosting endora*/
+    urlPrefix2: string;
 
-    constructor(url: string) {
-        this.url = url;
+    constructor() {
+        this.urlPrefix = "";     /*pro webhosting endora*/
+        this.urlPrefix2 = "/TaxiDisp/src";
     }
 
-    getStav(): Promise<IStavUzivatele[]> {
+    getStav(): Promise<StavUzivatele[]> {
 
         var myHeaders = new Headers();
         myHeaders.append("Accept", "application/json");
@@ -30,4 +28,41 @@ export class ApiRequest {
             return data;
         });
     }
+
+    getAllObjednavka(): Promise<Objednavka[]> {
+
+        var myHeaders = new Headers();
+        myHeaders.append("Accept", "application/json");
+
+        var myInit = {
+            method: 'GET',
+            headers: myHeaders
+        };
+
+        return fetch(this.urlPrefix2 + '/public/Objednavka', myInit).then((response) => {
+            return response.json();
+        }).then((data) => {
+            console.log(data);
+            return data;
+        });
+    }
+
+    getAllUzivatel(): Promise<Uzivatel[]> {
+
+        var myHeaders = new Headers();
+        myHeaders.append("Accept", "application/json");
+
+        var myInit = {
+            method: 'GET',
+            headers: myHeaders
+        };
+
+        return fetch(this.urlPrefix2 + '/public/Uzivatele', myInit).then((response) => {
+            return response.json();
+        }).then((data) => {
+            console.log(data);
+            return data;
+        });
+    }
+
 }

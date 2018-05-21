@@ -6,102 +6,35 @@ import { Provider } from 'mobx-react';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 import { Model } from './index';
 
-import { ApiRequest, IStavUzivatele } from './ApiRequest';
+import { ApiRequest } from './Utils/ApiRequest';
+import { ObjednavkyComponent } from './Copmponents/ObjednavkyComponent';
+import { ObjednavkyModel } from './Models/ObjednavkyModel';
+import { MyMenu } from './Copmponents/MyMenu';
+import { UzivateleComponent } from './Copmponents/UzivateleComponent';
+
+
 
 export interface AppProps {
-
+  //objednavkyStore: ObjednavkyModel;
 }
-
-
-
 export default class App extends React.Component<AppProps> {
 
   constructor(props: AppProps) {
     super(props);
-
-  }
-
-  public render() {
-    return (
-
-        <Router>
-          <div className="App">
-
-            <ul>
-              <li><Link to='/'>Homeee</Link></li>
-              <li><Link to='/about'>About</Link></li>
-              <li><Link to='/topics'>Topics</Link></li>
-
-            </ul>
-
-            <hr />
-
-            <Route exact path='/' component={Home} />
-            <Route path='/about' component={About} />
-            <Route path='/topics' component={Topics} />
-
-          </div>
-        </Router>
-      
-    );
-  }
-}
-
-export interface HomeProps{
-  modelStore: Model;
-}
-
-@inject('modelStore')
-@observer
-export class Home extends React.Component<HomeProps> {
-
-  constructor(props: any) {
-    super(props);
-  }
-
-  clicked() {
-    console.log("clicked");
-    console.log(this.props.modelStore);
-    this.props.modelStore.pop();
-  }
-
-  clicked2() {
-    console.log("clicked2");
-    this.props.modelStore.reload();
   }
 
   public render() {
 
     return (
-      <div className="stavy">
-        <button onClick={() => this.clicked()}>POP</button>
-        <button onClick={() => this.clicked2()}>Reload</button>
-        <span>{JSON.stringify(this.props.modelStore.array)}</span>
-      </div>
+      <Router>
+        <div className="App">
+          <MyMenu />
+
+          <Route path='/Objednavky' component={ObjednavkyComponent} />
+          <Route path='/Uzivatele' component={UzivateleComponent} />
+
+        </div>
+      </Router>
     );
   }
 }
-
-export class About extends React.Component {
-
-  public render() {
-
-    return (
-      "About"
-    );
-  }
-}
-
-export class Topics extends React.Component {
-
-  public render() {
-
-    return (
-      "Topics"
-    );
-  }
-}
-
-
-
-
