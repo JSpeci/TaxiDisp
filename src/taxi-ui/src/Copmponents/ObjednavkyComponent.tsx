@@ -22,11 +22,11 @@ export class ObjednavkyComponent extends React.Component<ObjednavkyProps> {
         console.log(this.props.objednavkyStore);
 
         let objednavky = this.props.objednavkyStore.ObjednavkyAll.map(o => {
-            return (<ObjednavkaComponent objednavka={o} />);
+            return (<ObjednavkaComponent key={o.id} objednavka={o} />);
         });
 
         return (
-            <ul className="list-group">
+            <ul key={1234} className="list-group">
                 {objednavky}
             </ul>
         );

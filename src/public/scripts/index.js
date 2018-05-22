@@ -31553,7 +31553,7 @@ var ObjednavkaComponent = /** @class */function (_super) {
         return _super.call(this, props) || this;
     }
     ObjednavkaComponent.prototype.render = function () {
-        return React.createElement("li", { className: "list-group-item d-flex justify-content-between align-items-center", key: this.props.objednavka.id }, " ", this.props.objednavka.adresaKam, " ");
+        return React.createElement("li", { className: "list-group-item d-flex justify-content-between align-items-center", key: this.props.objednavka.id }, React.createElement("div", { className: "objItem" }, this.props.objednavka.adresaKam), React.createElement("div", { className: "objItem" }, this.props.objednavka.casPristaveniVozu, " "), React.createElement("div", { className: "objItem" }, this.props.objednavka.StavObjednavky.nazevStavu, " "), React.createElement("div", null, React.createElement("span", { className: "pull-right glyphicon glyphicon-cog icon" }, "Set")));
     };
     ObjednavkaComponent = __decorate([_mobxReact.observer], ObjednavkaComponent);
     return ObjednavkaComponent;
@@ -31612,9 +31612,9 @@ var ObjednavkyComponent = /** @class */function (_super) {
     ObjednavkyComponent.prototype.render = function () {
         console.log(this.props.objednavkyStore);
         var objednavky = this.props.objednavkyStore.ObjednavkyAll.map(function (o) {
-            return React.createElement(_ObjednavkaComponent.ObjednavkaComponent, { objednavka: o });
+            return React.createElement(_ObjednavkaComponent.ObjednavkaComponent, { key: o.id, objednavka: o });
         });
-        return React.createElement("ul", { className: "list-group" }, objednavky);
+        return React.createElement("ul", { key: 1234, className: "list-group" }, objednavky);
     };
     ObjednavkyComponent = __decorate([(0, _mobxReact.inject)('objednavkyStore'), _mobxReact.observer], ObjednavkyComponent);
     return ObjednavkyComponent;
@@ -31659,7 +31659,7 @@ var MyMenu = /** @class */function (_super) {
         return _super.call(this, props) || this;
     }
     MyMenu.prototype.render = function () {
-        return React.createElement("nav", { className: "navbar sticky-top navbar-light bg-light" }, React.createElement("ul", { className: "navbar-nav mr-auto mt-2 mt-lg-0" }, React.createElement(_reactRouterDom.Link, { to: '/Home', className: "navbar-brand" }, "Home"), React.createElement(_reactRouterDom.Link, { to: '/Objednavky', className: "navbar-brand" }, "Objednavky"), React.createElement(_reactRouterDom.Link, { to: '/Uzivatele', className: "navbar-brand" }, "\u0158idi\u010Di a dispe\u010De\u0159i"), React.createElement(_reactRouterDom.Link, { to: '/Dochazka', className: "navbar-brand" }, "Doch\xE1zka")));
+        return React.createElement("nav", { className: "navbar sticky-top navbar-light bg-light" }, React.createElement("ul", { className: "navbar-nav mr-auto mt-2 mt-lg-0" }, React.createElement(_reactRouterDom.Link, { to: '/Prehled', className: "navbar-brand" }, "P\u0159ehled p\u0159\xEDtomn\xFDch"), React.createElement(_reactRouterDom.Link, { to: '/Objednavky', className: "navbar-brand" }, "Objednavky"), React.createElement(_reactRouterDom.Link, { to: '/Uzivatele', className: "navbar-brand" }, "\u0158idi\u010Di a dispe\u010De\u0159i"), React.createElement(_reactRouterDom.Link, { to: '/Dochazka', className: "navbar-brand" }, "Doch\xE1zka")));
     };
     return MyMenu;
 }(React.Component);
@@ -31772,15 +31772,162 @@ var UzivateleComponent = /** @class */function (_super) {
     UzivateleComponent.prototype.render = function () {
         console.log(this.props.uzivateleStore);
         var uzivatele = this.props.uzivateleStore.UzivatelAll.map(function (u) {
-            return React.createElement(_UzivatelComponent.UzivatelComponent, { uzivatel: u });
+            return React.createElement(_UzivatelComponent.UzivatelComponent, { key: u.id, uzivatel: u });
         });
-        return React.createElement("ul", { className: "list-group" }, uzivatele);
+        return React.createElement("ul", { key: 1253, className: "list-group" }, uzivatele);
     };
-    UzivateleComponent = __decorate([(0, _mobxReact.inject)('uzivateleStore'), _mobxReact.observer], UzivateleComponent);
+    UzivateleComponent = __decorate([(0, _mobxReact.inject)('uzivateleStore', 'dochazkaStore'), _mobxReact.observer], UzivateleComponent);
     return UzivateleComponent;
 }(React.Component);
 exports.UzivateleComponent = UzivateleComponent;
-},{"react":7,"mobx-react":6,"./UzivatelComponent":99}],2:[function(require,module,exports) {
+},{"react":7,"mobx-react":6,"./UzivatelComponent":99}],102:[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.DochazkaRowComponent = undefined;
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _react = require("react");
+
+var React = _interopRequireWildcard(_react);
+
+var _mobxReact = require("mobx-react");
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+var __extends = undefined && undefined.__extends || function () {
+    var extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function (d, b) {
+        d.__proto__ = b;
+    } || function (d, b) {
+        for (var p in b) {
+            if (b.hasOwnProperty(p)) d[p] = b[p];
+        }
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() {
+            this.constructor = d;
+        }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+}();
+var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
+    var c = arguments.length,
+        r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+        d;
+    if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
+        if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    }return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var DochazkaRowComponent = /** @class */function (_super) {
+    __extends(DochazkaRowComponent, _super);
+    function DochazkaRowComponent(props) {
+        return _super.call(this, props) || this;
+    }
+    DochazkaRowComponent.prototype.render = function () {
+        return React.createElement("tr", { className: "", key: this.props.dochazkaRowModel.dochazka.id }, React.createElement("td", { className: "objItem" }, this.props.dochazkaRowModel.dochazka.prichod), React.createElement("td", { className: "objItem" }, this.props.dochazkaRowModel.dochazka.odchod, " "), React.createElement("td", { className: this.getClassNameByStavUzivatele() }, this.props.dochazkaRowModel.dochazka.StavUzivatele.nazevStavu, " "), React.createElement("td", { className: this.getClassNameByTypPrace() }, this.props.dochazkaRowModel.dochazka.TypPraceUzivatele.typPraceUzivatele, " "), React.createElement("td", { className: this.getClassNameByPracuje() }, this.props.dochazkaRowModel.jeVPraci ? "v praci" : "nepracuje", " "), React.createElement("td", null, React.createElement("button", { type: "button", className: "btn btn-success" }, "Edit")));
+    };
+    DochazkaRowComponent.prototype.getClassNameByPracuje = function () {
+        return this.props.dochazkaRowModel.jeVPraci ? "objItem bg-success" : "objItem bg-danger";
+    };
+    DochazkaRowComponent.prototype.getClassNameByTypPrace = function () {
+        if (this.props.dochazkaRowModel.dochazka.TypPraceUzivatele.typPraceUzivatele === "směna") {
+            return "objItem bg-primary";
+        } else {
+            return "objItem bg-secondary";
+        }
+    };
+    DochazkaRowComponent.prototype.getClassNameByStavUzivatele = function () {
+        switch (this.props.dochazkaRowModel.dochazka.StavUzivatele.nazevStavu) {
+            case "volny":
+                return "objItem bg-success";
+            case "obsazeny":
+                return "objItem bg-waarning";
+            case "vedle":
+                return "objItem bg-success";
+            case "mimo":
+                return "objItem bg-info";
+            default:
+                return "objItem bg-light";
+        }
+    };
+    DochazkaRowComponent = __decorate([_mobxReact.observer], DochazkaRowComponent);
+    return DochazkaRowComponent;
+}(React.Component);
+exports.DochazkaRowComponent = DochazkaRowComponent;
+},{"react":7,"mobx-react":6}],101:[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.DochazkaComponent = undefined;
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _react = require("react");
+
+var React = _interopRequireWildcard(_react);
+
+var _mobxReact = require("mobx-react");
+
+var _DochazkaRowComponent = require("./DochazkaRowComponent");
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+var __extends = undefined && undefined.__extends || function () {
+    var extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function (d, b) {
+        d.__proto__ = b;
+    } || function (d, b) {
+        for (var p in b) {
+            if (b.hasOwnProperty(p)) d[p] = b[p];
+        }
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() {
+            this.constructor = d;
+        }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+}();
+var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
+    var c = arguments.length,
+        r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+        d;
+    if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
+        if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    }return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var DochazkaComponent = /** @class */function (_super) {
+    __extends(DochazkaComponent, _super);
+    function DochazkaComponent(props) {
+        return _super.call(this, props) || this;
+    }
+    DochazkaComponent.prototype.render = function () {
+        console.log(this.props.dochazkaStore);
+        return React.createElement("table", { key: 1234, className: "table" }, React.createElement("thead", null, this.makeTableHeader()), React.createElement("tbody", null, this.makeTableRows()));
+    };
+    DochazkaComponent.prototype.makeTableRows = function () {
+        var list = this.props.dochazkaStore.DochazkaPritomni.map(function (d) {
+            return React.createElement(_DochazkaRowComponent.DochazkaRowComponent, { dochazkaRowModel: d, key: d.dochazka.id });
+        });
+        return list;
+    };
+    DochazkaComponent.prototype.makeTableHeader = function () {
+        var result = React.createElement("tr", null, React.createElement("th", null, "P\u0159\xEDchod"), React.createElement("th", null, "Odchod"), React.createElement("th", null, "Stav"), React.createElement("th", null, "Typ prace"), React.createElement("th", null, "Pracuje"), React.createElement("th", null, "Volby"));
+        return result;
+    };
+    DochazkaComponent = __decorate([(0, _mobxReact.inject)('dochazkaStore'), _mobxReact.observer], DochazkaComponent);
+    return DochazkaComponent;
+}(React.Component);
+exports.DochazkaComponent = DochazkaComponent;
+},{"react":7,"mobx-react":6,"./DochazkaRowComponent":102}],2:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31798,6 +31945,8 @@ var _ObjednavkyComponent = require('./Copmponents/ObjednavkyComponent');
 var _MyMenu = require('./Copmponents/MyMenu');
 
 var _UzivateleComponent = require('./Copmponents/UzivateleComponent');
+
+var _DochazkaComponent = require('./Copmponents/DochazkaComponent');
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -31824,12 +31973,12 @@ var App = /** @class */function (_super) {
         return _super.call(this, props) || this;
     }
     App.prototype.render = function () {
-        return React.createElement(_reactRouterDom.BrowserRouter, null, React.createElement("div", { className: "App" }, React.createElement(_MyMenu.MyMenu, null), React.createElement(_reactRouterDom.Route, { path: '/Objednavky', component: _ObjednavkyComponent.ObjednavkyComponent }), React.createElement(_reactRouterDom.Route, { path: '/Uzivatele', component: _UzivateleComponent.UzivateleComponent })));
+        return React.createElement(_reactRouterDom.BrowserRouter, null, React.createElement("div", { className: "App" }, React.createElement(_MyMenu.MyMenu, null), React.createElement(_reactRouterDom.Route, { path: '/Prehled', component: _DochazkaComponent.DochazkaComponent }), React.createElement(_reactRouterDom.Route, { path: '/Objednavky', component: _ObjednavkyComponent.ObjednavkyComponent }), React.createElement(_reactRouterDom.Route, { path: '/Uzivatele', component: _UzivateleComponent.UzivateleComponent }), React.createElement(_reactRouterDom.Route, { path: '/Dochazka', component: _DochazkaComponent.DochazkaComponent })));
     };
     return App;
 }(React.Component);
 exports.default = App;
-},{"react":7,"react-router-dom":14,"./Copmponents/ObjednavkyComponent":9,"./Copmponents/MyMenu":96,"./Copmponents/UzivateleComponent":98}],3:[function(require,module,exports) {
+},{"react":7,"react-router-dom":14,"./Copmponents/ObjednavkyComponent":9,"./Copmponents/MyMenu":96,"./Copmponents/UzivateleComponent":98,"./Copmponents/DochazkaComponent":101}],3:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31862,6 +32011,20 @@ var ApiRequest = /** @class */function () {
             headers: myHeaders
         };
         return fetch(this.urlPrefix2 + '/public/Objednavka', myInit).then(function (response) {
+            return response.json();
+        }).then(function (data) {
+            console.log(data);
+            return data;
+        });
+    };
+    ApiRequest.prototype.getAllDochazka = function () {
+        var myHeaders = new Headers();
+        myHeaders.append("Accept", "application/json");
+        var myInit = {
+            method: 'GET',
+            headers: myHeaders
+        };
+        return fetch(this.urlPrefix2 + '/public/Dochazka', myInit).then(function (response) {
             return response.json();
         }).then(function (data) {
             console.log(data);
@@ -32293,7 +32456,217 @@ var UzivateleModel = /** @class */function () {
     return UzivateleModel;
 }();
 exports.UzivateleModel = UzivateleModel;
-},{"mobx":10}],1:[function(require,module,exports) {
+},{"mobx":10}],103:[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.DochazkaRowModel = undefined;
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _mobx = require("mobx");
+
+var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
+    var c = arguments.length,
+        r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+        d;
+    if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
+        if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    }return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var DochazkaRowModel = /** @class */function () {
+    function DochazkaRowModel(dochazka, apiRequester) {
+        this.apiRequester = apiRequester;
+        this.dochazka = dochazka;
+    }
+    Object.defineProperty(DochazkaRowModel.prototype, "jeVPraci", {
+        get: function get() {
+            return this.dochazka.odchod == null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    __decorate([_mobx.observable], DochazkaRowModel.prototype, "dochazka", void 0);
+    __decorate([_mobx.computed], DochazkaRowModel.prototype, "jeVPraci", null);
+    return DochazkaRowModel;
+}();
+exports.DochazkaRowModel = DochazkaRowModel;
+},{"mobx":10}],100:[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.DochazkaModel = undefined;
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _mobx = require("mobx");
+
+var _DochazkaRowModel = require("../Models/DochazkaRowModel");
+
+var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
+    var c = arguments.length,
+        r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+        d;
+    if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
+        if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    }return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __awaiter = undefined && undefined.__awaiter || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) {
+            try {
+                step(generator.next(value));
+            } catch (e) {
+                reject(e);
+            }
+        }
+        function rejected(value) {
+            try {
+                step(generator["throw"](value));
+            } catch (e) {
+                reject(e);
+            }
+        }
+        function step(result) {
+            result.done ? resolve(result.value) : new P(function (resolve) {
+                resolve(result.value);
+            }).then(fulfilled, rejected);
+        }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = undefined && undefined.__generator || function (thisArg, body) {
+    var _ = { label: 0, sent: function sent() {
+            if (t[0] & 1) throw t[1];return t[1];
+        }, trys: [], ops: [] },
+        f,
+        y,
+        t,
+        g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function () {
+        return this;
+    }), g;
+    function verb(n) {
+        return function (v) {
+            return step([n, v]);
+        };
+    }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) {
+            try {
+                if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+                if (y = 0, t) op = [0, t.value];
+                switch (op[0]) {
+                    case 0:case 1:
+                        t = op;break;
+                    case 4:
+                        _.label++;return { value: op[1], done: false };
+                    case 5:
+                        _.label++;y = op[1];op = [0];continue;
+                    case 7:
+                        op = _.ops.pop();_.trys.pop();continue;
+                    default:
+                        if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
+                            _ = 0;continue;
+                        }
+                        if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
+                            _.label = op[1];break;
+                        }
+                        if (op[0] === 6 && _.label < t[1]) {
+                            _.label = t[1];t = op;break;
+                        }
+                        if (t && _.label < t[2]) {
+                            _.label = t[2];_.ops.push(op);break;
+                        }
+                        if (t[2]) _.ops.pop();
+                        _.trys.pop();continue;
+                }
+                op = body.call(thisArg, _);
+            } catch (e) {
+                op = [6, e];y = 0;
+            } finally {
+                f = t = 0;
+            }
+        }if (op[0] & 5) throw op[1];return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+var DochazkaModel = /** @class */function () {
+    function DochazkaModel(apiRequester) {
+        this.apiRequester = apiRequester;
+        this.dochazkyModels = [];
+        this.load();
+    }
+    Object.defineProperty(DochazkaModel.prototype, "DochazkaAll", {
+        get: function get() {
+            return this.dochazky == null ? [] : this.dochazky;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(DochazkaModel.prototype, "DochazkaRowModelsAll", {
+        get: function get() {
+            return this.dochazkyModels == null ? [] : this.dochazkyModels;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(DochazkaModel.prototype, "DochazkaPritomni", {
+        get: function get() {
+            return this.dochazkyModels == null ? [] : this.dochazkyModels.filter(function (i) {
+                return i.jeVPraci;
+            });
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(DochazkaModel.prototype, "DochazkaNepritomni", {
+        get: function get() {
+            return this.dochazkyModels == null ? [] : this.dochazkyModels.filter(function (i) {
+                return !i.jeVPraci;
+            });
+        },
+        enumerable: true,
+        configurable: true
+    });
+    DochazkaModel.prototype.load = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.loading = true;
+                        return [4 /*yield*/, this.apiRequester.getAllDochazka().then(function (data) {
+                            _this.dochazky = data;
+                        })];
+                    case 1:
+                        _a.sent();
+                        this.DochazkaAll.forEach(function (d) {
+                            _this.dochazkyModels.push(new _DochazkaRowModel.DochazkaRowModel(d, _this.apiRequester));
+                        });
+                        this.loading = false;
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    __decorate([_mobx.observable], DochazkaModel.prototype, "loading", void 0);
+    __decorate([_mobx.observable], DochazkaModel.prototype, "dochazky", void 0);
+    __decorate([_mobx.observable], DochazkaModel.prototype, "dochazkyModels", void 0);
+    __decorate([_mobx.computed], DochazkaModel.prototype, "DochazkaAll", null);
+    __decorate([_mobx.computed], DochazkaModel.prototype, "DochazkaRowModelsAll", null);
+    __decorate([_mobx.computed], DochazkaModel.prototype, "DochazkaPritomni", null);
+    __decorate([_mobx.computed], DochazkaModel.prototype, "DochazkaNepritomni", null);
+    return DochazkaModel;
+}();
+exports.DochazkaModel = DochazkaModel;
+},{"mobx":10,"../Models/DochazkaRowModel":103}],1:[function(require,module,exports) {
 'use strict';
 
 var _react = require('react');
@@ -32318,13 +32691,15 @@ var _StavUzivateleModel = require('./Models/StavUzivateleModel');
 
 var _UzivateleModel = require('./Models/UzivateleModel');
 
+var _DochazkaModel = require('./Models/DochazkaModel');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 var apiRequest = new _ApiRequest.ApiRequest();
-ReactDOM.render(React.createElement(_mobxReact.Provider, { modelStore: new _StavUzivateleModel.StavUzivateleModel(apiRequest), objednavkyStore: new _ObjednavkyModel.ObjednavkyModel(apiRequest), uzivateleStore: new _UzivateleModel.UzivateleModel(apiRequest) }, React.createElement(_App2.default, null)), document.getElementById('root'));
-},{"react":7,"react-dom":8,"./App":2,"mobx-react":6,"./Utils/ApiRequest":3,"./Models/ObjednavkyModel":4,"./Models/StavUzivateleModel":5,"./Models/UzivateleModel":97}],92:[function(require,module,exports) {
+ReactDOM.render(React.createElement(_mobxReact.Provider, { modelStore: new _StavUzivateleModel.StavUzivateleModel(apiRequest), objednavkyStore: new _ObjednavkyModel.ObjednavkyModel(apiRequest), uzivateleStore: new _UzivateleModel.UzivateleModel(apiRequest), dochazkaStore: new _DochazkaModel.DochazkaModel(apiRequest) }, React.createElement(_App2.default, null)), document.getElementById('root'));
+},{"react":7,"react-dom":8,"./App":2,"mobx-react":6,"./Utils/ApiRequest":3,"./Models/ObjednavkyModel":4,"./Models/StavUzivateleModel":5,"./Models/UzivateleModel":97,"./Models/DochazkaModel":100}],106:[function(require,module,exports) {
 
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -32493,5 +32868,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},[92,1])
+},{}]},{},[106,1])
 //# sourceMappingURL=/index.map

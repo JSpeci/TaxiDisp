@@ -11,6 +11,8 @@ import { ObjednavkyComponent } from './Copmponents/ObjednavkyComponent';
 import { ObjednavkyModel } from './Models/ObjednavkyModel';
 import { MyMenu } from './Copmponents/MyMenu';
 import { UzivateleComponent } from './Copmponents/UzivateleComponent';
+import { DochazkaComponent } from './Copmponents/DochazkaComponent';
+import { PrehledComponent } from './Copmponents/PrehledComponent';
 
 
 
@@ -29,9 +31,10 @@ export default class App extends React.Component<AppProps> {
       <Router>
         <div className="App">
           <MyMenu />
-
+          <Route path='/Prehled' component={DochazkaComponent} />
           <Route path='/Objednavky' component={ObjednavkyComponent} />
           <Route path='/Uzivatele' component={UzivateleComponent} />
+          <Route path='/Dochazka' component={DochazkaComponent} />
 
         </div>
       </Router>

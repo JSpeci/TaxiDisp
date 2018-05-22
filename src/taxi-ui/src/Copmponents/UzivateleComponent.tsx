@@ -5,13 +5,11 @@ import { observer, inject } from 'mobx-react';
 import { ObjednavkaComponent } from './ObjednavkaComponent';
 import { UzivatelComponent } from './UzivatelComponent';
 
-
-
 export interface UzivateleComponentProps {
     uzivateleStore: UzivateleModel;
 }
 
-@inject('uzivateleStore')
+@inject('uzivateleStore', 'dochazkaStore')
 @observer
 export class UzivateleComponent extends React.Component<UzivateleComponentProps> {
 
@@ -23,12 +21,11 @@ export class UzivateleComponent extends React.Component<UzivateleComponentProps>
         console.log(this.props.uzivateleStore);
 
         let uzivatele = this.props.uzivateleStore.UzivatelAll.map(u => {
-            return (<UzivatelComponent uzivatel={u} />);
+            return (<UzivatelComponent key={u.id} uzivatel={u} />);
         });
 
-
         return (
-            <ul className="list-group">
+            <ul key={1253} className="list-group">
                 {uzivatele}
             </ul>
         );

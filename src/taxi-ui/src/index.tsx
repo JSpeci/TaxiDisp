@@ -10,13 +10,15 @@ import { ObjednavkyModel } from './Models/ObjednavkyModel';
 import { StavUzivatele } from './Utils/Interfaces';
 import { StavUzivateleModel } from './Models/StavUzivateleModel';
 import { UzivateleModel } from './Models/UzivateleModel';
+import { DochazkaModel } from './Models/DochazkaModel';
 
 const apiRequest = new ApiRequest();
 
 ReactDOM.render(
   <Provider modelStore={new StavUzivateleModel(apiRequest)}
             objednavkyStore={new ObjednavkyModel(apiRequest)}
-            uzivateleStore={new UzivateleModel(apiRequest)}>
+            uzivateleStore={new UzivateleModel(apiRequest)}
+            dochazkaStore={new DochazkaModel(apiRequest)}>
     <App />
   </Provider>,
   document.getElementById('root') as HTMLElement
