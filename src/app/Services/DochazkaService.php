@@ -130,7 +130,7 @@ class DochazkaService extends AService {
                 $stmt->bindParam(2, $int_id, PDO::PARAM_INT);
                 $stmt->execute();
             } catch (PDOException $e) {
-                return null;
+                return "Chyba v updatu tabulky";
             }
         }
         return $this->assemblyDTO($this->getDochazkaById($id));

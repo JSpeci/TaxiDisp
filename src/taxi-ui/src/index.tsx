@@ -15,7 +15,7 @@ import { DochazkaModel } from './Models/DochazkaModel';
 const apiRequest = new ApiRequest();
 
 ReactDOM.render(
-  <Provider modelStore={new StavUzivateleModel(apiRequest)}
+  <Provider 
             objednavkyStore={new ObjednavkyModel(apiRequest)}
             uzivateleStore={new UzivateleModel(apiRequest)}
             dochazkaStore={new DochazkaModel(apiRequest)}>

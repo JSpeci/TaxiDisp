@@ -12,33 +12,33 @@ export interface Objednavka {
 export interface Uzivatel {
     id: string;
     nickName: string;
-    login: string;
+    login: string | null;
     celeJmeno: string;
     role: RoleUzivatele;
 }
 export interface Dochazka {
     id: string;
     prichod: string;
-    odchod: string;
+    odchod: string | null;
     Uzivatel: Uzivatel;
     TypPraceUzivatele: TypPraceUzivatele;
     StavUzivatele: StavUzivatele;
     Auto: Auto;
 }
 export interface RoleUzivatele {
-    id: string;
+    id: string | null;
     nazevRole: string;
 }
 export interface Auto {
     id: string;
     znacka: string;
-    typ: string;
+    typ: string | null;
     barva: string;
-    rokVyroby: number;
-    pocetMist: number;
-    idVysilacka: number;
-    cisloMagistratni: number;
-    registracniZnacka: string;
+    rokVyroby: string | null;
+    pocetMist: string;
+    idVysilacka: string | null;
+    cisloMagistratni: string | null;
+    registracniZnacka: string | null;
 }
 export interface TypPraceUzivatele {
     id: string;
@@ -51,4 +51,15 @@ export interface StavUzivatele {
 export interface StavObjednavky {
     id: number;
     nazevStavu: string;
+}
+
+
+export interface DochazkaDTO {
+    idDochazka?: string;
+    prichod: string;
+    odchod: string | null;
+    idUzivatel: string;
+    idTypPraceUzivatele: string;
+    idStavUzivatele: string;
+    idAuto: string;
 }

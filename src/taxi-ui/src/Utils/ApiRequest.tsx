@@ -1,4 +1,4 @@
-import { StavUzivatele, Objednavka, Uzivatel, Dochazka } from "./Interfaces";
+import { StavUzivatele, Objednavka, Uzivatel, Dochazka, DochazkaDTO, TypPraceUzivatele } from "./Interfaces";
 
 
 export class ApiRequest {
@@ -11,7 +11,56 @@ export class ApiRequest {
         this.urlPrefix2 = "/TaxiDisp/src";
     }
 
-    getStav(): Promise<StavUzivatele[]> {
+    public static formatTimeToMysqlFormat(date: Date): string {
+        let result = "";
+        //2018-02-21 09:30:00
+        result += date.getFullYear();
+        result += "-";
+        if (date.getMonth() <= 9) {
+            result += "0";
+        }
+        result += date.getMonth();
+        result += "-";
+        if (date.getDay() <= 9) {
+            result += "0";
+        }
+        result += date.getDay();
+        result += " ";
+        if (date.getHours() <= 9) {
+            result += "0";
+        }
+        result += date.getHours();
+        result += ":";
+        if (date.getMinutes() <= 9) {
+            result += "0";
+        }
+        result += date.getMinutes();
+        result += ":";
+        if (date.getSeconds() <= 9) {
+            result += "0";
+        }
+        result += date.getSeconds();
+        return result;
+    }
+
+    putDochazka(dochazka: DochazkaDTO): void {
+
+        let obj = dochazka;
+        console.log("PUT: " + JSON.stringify(obj));
+
+        var myInit = {
+            method: "PUT",
+            body: JSON.stringify(obj),
+            headers:{
+                'Content-Type': 'application/json'
+              }
+        };
+
+        console.log(this.urlPrefix2 + "/public/Dochazka/" + dochazka.idDochazka);
+        fetch(this.urlPrefix2 + "/public/Dochazka/" + dochazka.idDochazka, myInit).then(res => res.json());
+    }
+
+    getStavy(): Promise<StavUzivatele[]> {
 
         var myHeaders = new Headers();
         myHeaders.append("Accept", "application/json");
@@ -22,6 +71,23 @@ export class ApiRequest {
         };
 
         return fetch(this.urlPrefix2 + '/public/StavUzivatele', myInit).then((response) => {
+            return response.json();
+        }).then((data) => {
+            console.log(data);
+            return data;
+        });
+    }
+
+    getTypyPrace(): Promise<TypPraceUzivatele[]>{
+        var myHeaders = new Headers();
+        myHeaders.append("Accept", "application/json");
+
+        var myInit = {
+            method: 'GET',
+            headers: myHeaders
+        };
+
+        return fetch(this.urlPrefix2 + '/public/TypPraceUzivatele', myInit).then((response) => {
             return response.json();
         }).then((data) => {
             console.log(data);

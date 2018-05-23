@@ -1,12 +1,10 @@
 import { observable, action } from "mobx";
-import { StavUzivatele } from "../Utils/Interfaces";
+import { TypPraceUzivatele } from "../Utils/Interfaces";
 import { ApiRequest } from "../Utils/ApiRequest";
 
-export class StavUzivateleModel {
+export class TypPraceUzivateleModel {
 
-  @observable array: StavUzivatele[];
-
-  @observable selected: StavUzivatele;
+  @observable array: TypPraceUzivatele[];
 
   apiRequester: ApiRequest;
   constructor(apiRequester: ApiRequest) {
@@ -15,7 +13,7 @@ export class StavUzivateleModel {
   }
 
   async load() {
-    await this.apiRequester.getStavy().then(data => { this.array = data });
+    await this.apiRequester.getTypyPrace().then(data => { this.array = data });
   }
 
   @action.bound
@@ -23,8 +21,8 @@ export class StavUzivateleModel {
     console.log("Stav Changed on stav model", nazev);
   }
 
-  getStavByName(nazev: string) {
-    return this.array.find(f => f.nazevStavu == nazev);
+  getTypByName(nazev: string) {
+    return this.array.find(f => f.typPraceUzivatele == nazev);
   }
 
 }

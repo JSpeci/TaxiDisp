@@ -31,7 +31,7 @@ export default class App extends React.Component<AppProps> {
       <Router>
         <div className="App">
           <MyMenu />
-          <Route path='/Prehled' component={DochazkaComponent} />
+          <Route path='/Prehled' component={PrehledComponent} />
           <Route path='/Objednavky' component={ObjednavkyComponent} />
           <Route path='/Uzivatele' component={UzivateleComponent} />
           <Route path='/Dochazka' component={DochazkaComponent} />

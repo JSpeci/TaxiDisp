@@ -3,6 +3,7 @@ import * as ReactDOM from 'react-dom';
 import { observer, inject } from 'mobx-react';
 import { DochazkaModel } from '../Models/DochazkaModel';
 import { DochazkaRowComponent } from './DochazkaRowComponent';
+import { NewDochazkaComponent } from './NewDochazkaComponent';
 
 export interface DochazkaComponentProps {
     dochazkaStore: DochazkaModel;
@@ -20,15 +21,26 @@ export class DochazkaComponent extends React.Component<DochazkaComponentProps> {
         console.log(this.props.dochazkaStore);
 
         return (
-            <table key={1234} className="table">
-                <thead>{this.makeTableHeader()}</thead>
-                <tbody>{this.makeTableRows()}</tbody>
-            </table>
+            <div className="card">
+                <div className="card-header">
+                    <NewDochazkaComponent
+                        typyPrace={this.props.dochazkaStore.typPraceModel.array}
+                        uzivatele={this.props.dochazkaStore.uzivateleModel.uzivatele} 
+                        prichod={this.props.dochazkaStore.prichodOsoby}/>
+                </div>
+                <div className="card-body">
+                    < table key={1234} className="table" >
+                        <thead>{this.makeTableHeader()}</thead>
+                        <tbody>{this.makeTableRows()}</tbody>
+                    </table >
+                </div>
+            </div>
+
         );
     }
 
     makeTableRows() {
-        let list = this.props.dochazkaStore.DochazkaPritomni.map(d => {
+        let list = this.props.dochazkaStore.DochazkaNepritomni.map(d => {
             return (<DochazkaRowComponent dochazkaRowModel={d} key={d.dochazka.id} />);
         });
         return list;
@@ -44,15 +56,11 @@ export class DochazkaComponent extends React.Component<DochazkaComponentProps> {
                     Odchod
                 </th>
                 <th>
-                    Stav
-                </th>
-                <th>
                     Typ prace
                 </th>
                 <th>
                     Pracuje
                 </th>
-
                 <th>
                     Volby
                 </th>

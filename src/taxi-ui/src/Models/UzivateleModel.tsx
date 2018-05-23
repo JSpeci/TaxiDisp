@@ -24,4 +24,6 @@ export class UzivateleModel{
         this.loading = false;
     }
 
+    
+
 }
