@@ -24,9 +24,10 @@ export class DochazkaComponent extends React.Component<DochazkaComponentProps> {
             <div className="card">
                 <div className="card-header">
                     <NewDochazkaComponent
-                        typyPrace={this.props.dochazkaStore.typPraceModel.array}
-                        uzivatele={this.props.dochazkaStore.uzivateleModel.uzivatele} 
-                        prichod={this.props.dochazkaStore.prichodOsoby}/>
+                        typPraceModel={this.props.dochazkaStore.typPraceModel}
+                        uzivateleModel={this.props.dochazkaStore.uzivateleModel}
+                        autoModel={this.props.dochazkaStore.autoModel}
+                        prichodRidice={this.props.dochazkaStore.prichodOsoby} />
                 </div>
                 <div className="card-body">
                     < table key={1234} className="table" >
@@ -49,6 +50,9 @@ export class DochazkaComponent extends React.Component<DochazkaComponentProps> {
     makeTableHeader() {
         let result = (
             <tr>
+                <th>
+                    Jméno
+                </th>
                 <th>
                     Příchod
                 </th>

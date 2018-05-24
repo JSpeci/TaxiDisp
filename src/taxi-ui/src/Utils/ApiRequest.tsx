@@ -1,4 +1,4 @@
-import { StavUzivatele, Objednavka, Uzivatel, Dochazka, DochazkaDTO, TypPraceUzivatele } from "./Interfaces";
+import { StavUzivatele, Objednavka, Uzivatel, Dochazka, DochazkaDTO, TypPraceUzivatele, Auto } from "./Interfaces";
 
 
 export class ApiRequest {
@@ -51,13 +51,29 @@ export class ApiRequest {
         var myInit = {
             method: "PUT",
             body: JSON.stringify(obj),
-            headers:{
+            headers: {
                 'Content-Type': 'application/json'
-              }
+            }
         };
 
         console.log(this.urlPrefix2 + "/public/Dochazka/" + dochazka.idDochazka);
         fetch(this.urlPrefix2 + "/public/Dochazka/" + dochazka.idDochazka, myInit).then(res => res.json());
+    }
+
+    postDochazka(dochazka: DochazkaDTO): Promise<Dochazka> {
+
+        let obj = dochazka;
+        console.log("POST: " + JSON.stringify(obj));
+
+        let url = this.urlPrefix2 + "/public/Dochazka";
+        return fetch(url, {
+            method: 'POST', // or 'PUT'
+            body: JSON.stringify(dochazka), // data can be `string` or {object}!
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(res =>  res.json())
+            .catch(error => console.error('Error:', error));
     }
 
     getStavy(): Promise<StavUzivatele[]> {
@@ -78,7 +94,7 @@ export class ApiRequest {
         });
     }
 
-    getTypyPrace(): Promise<TypPraceUzivatele[]>{
+    getTypyPrace(): Promise<TypPraceUzivatele[]> {
         var myHeaders = new Headers();
         myHeaders.append("Accept", "application/json");
 
@@ -88,6 +104,24 @@ export class ApiRequest {
         };
 
         return fetch(this.urlPrefix2 + '/public/TypPraceUzivatele', myInit).then((response) => {
+            return response.json();
+        }).then((data) => {
+            console.log(data);
+            return data;
+        });
+    }
+
+    getAllAuto(): Promise<Auto[]> {
+
+        var myHeaders = new Headers();
+        myHeaders.append("Accept", "application/json");
+
+        var myInit = {
+            method: 'GET',
+            headers: myHeaders
+        };
+
+        return fetch(this.urlPrefix2 + '/public/Auto', myInit).then((response) => {
             return response.json();
         }).then((data) => {
             console.log(data);

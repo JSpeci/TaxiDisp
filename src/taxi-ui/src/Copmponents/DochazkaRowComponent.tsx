@@ -18,6 +18,7 @@ export class DochazkaRowComponent extends React.Component<DochazkaRowComponentPr
 
         return (
             <tr className="" key={this.props.dochazkaRowModel.dochazka.id}>
+                <td className="objItem">{this.props.dochazkaRowModel.dochazka.Uzivatel.nickName}</td>
                 <td className="objItem">{this.props.dochazkaRowModel.dochazka.prichod}</td>
                 {this.getOdchodComponent()}
                 <td className={this.getClassNameByTypPrace()}>{this.props.dochazkaRowModel.dochazka.TypPraceUzivatele.typPraceUzivatele} </td>

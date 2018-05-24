@@ -22,7 +22,11 @@ export class TypPraceUzivateleModel {
   }
 
   getTypByName(nazev: string) {
-    return this.array.find(f => f.typPraceUzivatele == nazev);
+    return this.array.find(f => f.typPraceUzivatele === nazev);
+  }
+
+  getTypById(typPraceId: string) {
+    return this.array.find(t => t.id === typPraceId);
   }
 
 }

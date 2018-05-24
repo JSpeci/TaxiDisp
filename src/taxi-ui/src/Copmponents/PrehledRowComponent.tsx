@@ -24,7 +24,9 @@ export class PrehledRowComponent extends React.Component<PrehledRowComponentProp
                 <td className="objItem">{this.props.prehledRowModel.dochazka.prichod}</td>
                 {this.getOdchodComponent()}
                 <td className={this.getClassNameByStavUzivatele()}>
-                    <StavSelectComponent key={this.props.prehledRowModel.dochazka.id} dochazkaRowModel={this.props.prehledRowModel} />
+                    <StavSelectComponent key={this.props.prehledRowModel.dochazka.id} 
+                    stavy={this.props.prehledRowModel.stavModel.array}
+                    selected={this.props.prehledRowModel.stavChanged}/>
                 </td>
                 <td className={this.getClassNameByTypPrace()}>{this.props.prehledRowModel.dochazka.TypPraceUzivatele.typPraceUzivatele} </td>
             </tr>

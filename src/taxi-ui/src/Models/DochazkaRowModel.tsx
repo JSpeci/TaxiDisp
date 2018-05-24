@@ -62,13 +62,13 @@ export class DochazkaRowModel {
     }
 
     @action.bound
-    async stavChanged(stavName: string) {
-        console.log("Stav changed on dochazka id", this.dochazka.Uzivatel.nickName, "to state", stavName);
-        console.log("Should change stav in DB");
+    async stavChanged(stavId: string) {
+        console.log("Stav changed on dochazka id", this.dochazka.Uzivatel.nickName, "to state", stavId);
+        console.log("Should change stav in DB", stavId);
 
 
         //update client model
-        let newStav = this.stavModel.getStavByName(stavName);
+        let newStav = this.stavModel.getStavById(stavId);
         if(newStav != null){
             this.dochazka.StavUzivatele = newStav;
         }

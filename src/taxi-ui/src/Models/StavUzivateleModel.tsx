@@ -27,4 +27,8 @@ export class StavUzivateleModel {
     return this.array.find(f => f.nazevStavu == nazev);
   }
 
+  getStavById(id: string) {
+    return this.array.find(f => f.id == id);
+  }
+
 }

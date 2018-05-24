@@ -69,6 +69,8 @@ class DochazkaService extends AService {
         $id_stav = $d->getStavUzivatele()->getId();
         $id_auto = $d->getAuto()->getId();
 
+
+
         try {
             $stmt->bindParam(1, $prichod, PDO::PARAM_STR);
             $stmt->bindParam(2, $odchod, PDO::PARAM_STR);
@@ -77,8 +79,10 @@ class DochazkaService extends AService {
             $stmt->bindParam(5, $id_stav, PDO::PARAM_INT);
             $stmt->bindParam(6, $id_auto, PDO::PARAM_INT);
             $stmt->execute();
+
             //assembly output DTO from db 
-            $dochazka_complete = $this->getDochazkaByAttrs($prichod, $odchod, $id_u);
+            $id = $this->container->db->lastInsertId();
+            $dochazka_complete = $this->getDochazkaById($id);
             //$user_complete ma vsecky pole, my osadime DTO, 
             //abychom zverejnili jen to co chceme
             $d = $this->assemblyDTO($dochazka_complete);
@@ -92,17 +96,17 @@ class DochazkaService extends AService {
     protected function getDochazkaByAttrs($prichod, $odchod, $id_u) {
         $sql = "        
             SELECT * 
-            FROM Dochazka
-            WHERE   Dochazka.prichod = ? 
-                AND Dochazka.odchod = ? 
-                AND Dochazka.idUzivatel = ?";
+            FROM `libtaxidb`.`Dochazka` 
+            WHERE   `prichod` = ? 
+                AND `odchod` = ? 
+                AND `idUzivatel` = ?";
         $stmt = $this->container->db->prepare($sql);
         try {
             $stmt->bindParam(1, $prichod, PDO::PARAM_STR);
             $stmt->bindParam(2, $odchod, PDO::PARAM_STR);
             $stmt->bindParam(3, $id_u, PDO::PARAM_INT);
             $stmt->execute();
-            
+
             $result = $stmt->fetch();
             return $result;
             

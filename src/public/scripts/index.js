@@ -77,7 +77,7 @@ parcelRequire = (function (modules, cache, entry) {
 
   // Override the current require with this new one
   return newRequire;
-})({33:[function(require,module,exports) {
+})({43:[function(require,module,exports) {
 /*
 object-assign
 (c) Sindre Sorhus
@@ -168,7 +168,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 	return to;
 };
-},{}],35:[function(require,module,exports) {
+},{}],44:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -222,7 +222,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 }
 
 module.exports = invariant;
-},{}],36:[function(require,module,exports) {
+},{}],46:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -240,7 +240,7 @@ if ('development' !== 'production') {
 }
 
 module.exports = emptyObject;
-},{}],34:[function(require,module,exports) {
+},{}],47:[function(require,module,exports) {
 "use strict";
 
 /**
@@ -277,7 +277,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 module.exports = emptyFunction;
-},{}],19:[function(require,module,exports) {
+},{}],10:[function(require,module,exports) {
 /** @license React v16.3.2
  * react.production.min.js
  *
@@ -390,7 +390,7 @@ var W = { Children: { map: function (a, b, e) {
   }, isValidElement: M, version: "16.3.2", __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: { ReactCurrentOwner: I, assign: m } },
     X = Object.freeze({ default: W }),
     Y = X && W || X;module.exports = Y["default"] ? Y["default"] : Y;
-},{"object-assign":33,"fbjs/lib/invariant":35,"fbjs/lib/emptyObject":36,"fbjs/lib/emptyFunction":34}],39:[function(require,module,exports) {
+},{"object-assign":43,"fbjs/lib/invariant":44,"fbjs/lib/emptyObject":46,"fbjs/lib/emptyFunction":47}],48:[function(require,module,exports) {
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
  *
@@ -453,7 +453,7 @@ if ('development' !== 'production') {
 }
 
 module.exports = warning;
-},{"./emptyFunction":34}],61:[function(require,module,exports) {
+},{"./emptyFunction":47}],56:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -467,7 +467,7 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
 
-},{}],42:[function(require,module,exports) {
+},{}],45:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -527,7 +527,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 }
 
 module.exports = checkPropTypes;
-},{"fbjs/lib/invariant":35,"fbjs/lib/warning":39,"./lib/ReactPropTypesSecret":61}],20:[function(require,module,exports) {
+},{"fbjs/lib/invariant":44,"fbjs/lib/warning":48,"./lib/ReactPropTypesSecret":56}],11:[function(require,module,exports) {
 /** @license React v16.3.2
  * react.development.js
  *
@@ -1936,7 +1936,7 @@ if ('development' !== "production") {
     module.exports = react;
   })();
 }
-},{"object-assign":33,"fbjs/lib/invariant":35,"fbjs/lib/emptyObject":36,"fbjs/lib/warning":39,"fbjs/lib/emptyFunction":34,"prop-types/checkPropTypes":42}],7:[function(require,module,exports) {
+},{"object-assign":43,"fbjs/lib/invariant":44,"fbjs/lib/emptyObject":46,"fbjs/lib/warning":48,"fbjs/lib/emptyFunction":47,"prop-types/checkPropTypes":45}],8:[function(require,module,exports) {
 'use strict';
 
 if ('development' === 'production') {
@@ -1944,7 +1944,7 @@ if ('development' === 'production') {
 } else {
   module.exports = require('./cjs/react.development.js');
 }
-},{"./cjs/react.production.min.js":19,"./cjs/react.development.js":20}],38:[function(require,module,exports) {
+},{"./cjs/react.production.min.js":10,"./cjs/react.development.js":11}],49:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -1978,7 +1978,7 @@ var ExecutionEnvironment = {
 };
 
 module.exports = ExecutionEnvironment;
-},{}],37:[function(require,module,exports) {
+},{}],52:[function(require,module,exports) {
 'use strict';
 
 /**
@@ -2015,7 +2015,7 @@ function getActiveElement(doc) /*?DOMElement*/{
 }
 
 module.exports = getActiveElement;
-},{}],41:[function(require,module,exports) {
+},{}],50:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -2081,7 +2081,7 @@ function shallowEqual(objA, objB) {
 }
 
 module.exports = shallowEqual;
-},{}],78:[function(require,module,exports) {
+},{}],76:[function(require,module,exports) {
 'use strict';
 
 /**
@@ -2104,7 +2104,7 @@ function isNode(object) {
 }
 
 module.exports = isNode;
-},{}],63:[function(require,module,exports) {
+},{}],57:[function(require,module,exports) {
 'use strict';
 
 /**
@@ -2127,7 +2127,7 @@ function isTextNode(object) {
 }
 
 module.exports = isTextNode;
-},{"./isNode":78}],40:[function(require,module,exports) {
+},{"./isNode":76}],51:[function(require,module,exports) {
 'use strict';
 
 /**
@@ -2165,7 +2165,7 @@ function containsNode(outerNode, innerNode) {
 }
 
 module.exports = containsNode;
-},{"./isTextNode":63}],21:[function(require,module,exports) {
+},{"./isTextNode":57}],17:[function(require,module,exports) {
 /** @license React v16.3.2
  * react-dom.production.min.js
  *
@@ -2413,7 +2413,7 @@ var Gg={createPortal:Fg,findDOMNode:function(a){return null==a?null:1===a.nodeTy
 null})}),!0):!1},unstable_createPortal:function(){return Fg.apply(void 0,arguments)},unstable_batchedUpdates:X.batchedUpdates,unstable_deferredUpdates:X.deferredUpdates,flushSync:X.flushSync,unstable_flushControlled:X.flushControlled,__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:{EventPluginHub:Ra,EventPluginRegistry:Ca,EventPropagators:kb,ReactControlledComponent:$b,ReactDOMComponentTree:bb,ReactDOMEventListener:$d},unstable_createRoot:function(a,b){return new tg(a,!0,null!=b&&!0===b.hydrate)}};
 X.injectIntoDevTools({findFiberByHostInstance:Ua,bundleType:0,version:"16.3.2",rendererPackageName:"react-dom"});var Hg=Object.freeze({default:Gg}),Ig=Hg&&Gg||Hg;module.exports=Ig["default"]?Ig["default"]:Ig;
 
-},{"fbjs/lib/invariant":35,"react":7,"fbjs/lib/ExecutionEnvironment":38,"object-assign":33,"fbjs/lib/emptyFunction":34,"fbjs/lib/getActiveElement":37,"fbjs/lib/shallowEqual":41,"fbjs/lib/containsNode":40,"fbjs/lib/emptyObject":36}],60:[function(require,module,exports) {
+},{"fbjs/lib/invariant":44,"react":8,"fbjs/lib/ExecutionEnvironment":49,"object-assign":43,"fbjs/lib/emptyFunction":47,"fbjs/lib/getActiveElement":52,"fbjs/lib/shallowEqual":50,"fbjs/lib/containsNode":51,"fbjs/lib/emptyObject":46}],59:[function(require,module,exports) {
 'use strict';
 
 /**
@@ -2444,7 +2444,7 @@ function hyphenate(string) {
 }
 
 module.exports = hyphenate;
-},{}],43:[function(require,module,exports) {
+},{}],53:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -2481,7 +2481,7 @@ function hyphenateStyleName(string) {
 }
 
 module.exports = hyphenateStyleName;
-},{"./hyphenate":60}],62:[function(require,module,exports) {
+},{"./hyphenate":59}],58:[function(require,module,exports) {
 "use strict";
 
 /**
@@ -2511,7 +2511,7 @@ function camelize(string) {
 }
 
 module.exports = camelize;
-},{}],44:[function(require,module,exports) {
+},{}],54:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -2549,7 +2549,7 @@ function camelizeStyleName(string) {
 }
 
 module.exports = camelizeStyleName;
-},{"./camelize":62}],23:[function(require,module,exports) {
+},{"./camelize":58}],18:[function(require,module,exports) {
 /** @license React v16.3.2
  * react-dom.development.js
  *
@@ -19167,7 +19167,7 @@ if ('development' !== "production") {
     module.exports = reactDom;
   })();
 }
-},{"fbjs/lib/invariant":35,"react":7,"fbjs/lib/warning":39,"fbjs/lib/ExecutionEnvironment":38,"object-assign":33,"fbjs/lib/emptyFunction":34,"prop-types/checkPropTypes":42,"fbjs/lib/getActiveElement":37,"fbjs/lib/shallowEqual":41,"fbjs/lib/containsNode":40,"fbjs/lib/emptyObject":36,"fbjs/lib/hyphenateStyleName":43,"fbjs/lib/camelizeStyleName":44}],9:[function(require,module,exports) {
+},{"fbjs/lib/invariant":44,"react":8,"fbjs/lib/warning":48,"fbjs/lib/ExecutionEnvironment":49,"object-assign":43,"fbjs/lib/emptyFunction":47,"prop-types/checkPropTypes":45,"fbjs/lib/getActiveElement":52,"fbjs/lib/shallowEqual":50,"fbjs/lib/containsNode":51,"fbjs/lib/emptyObject":46,"fbjs/lib/hyphenateStyleName":53,"fbjs/lib/camelizeStyleName":54}],7:[function(require,module,exports) {
 'use strict';
 
 function checkDCE() {
@@ -19203,7 +19203,7 @@ if ('development' === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.production.min.js":21,"./cjs/react-dom.development.js":23}],75:[function(require,module,exports) {
+},{"./cjs/react-dom.production.min.js":17,"./cjs/react-dom.development.js":18}],61:[function(require,module,exports) {
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -19257,7 +19257,7 @@ if ('development' !== 'production') {
 }
 
 module.exports = warning;
-},{}],105:[function(require,module,exports) {
+},{}],96:[function(require,module,exports) {
 /*
 object-assign
 (c) Sindre Sorhus
@@ -19348,7 +19348,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 	return to;
 };
-},{}],101:[function(require,module,exports) {
+},{}],94:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -19402,7 +19402,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 }
 
 module.exports = invariant;
-},{}],104:[function(require,module,exports) {
+},{}],102:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -19420,7 +19420,7 @@ if ('development' !== 'production') {
 }
 
 module.exports = emptyObject;
-},{}],103:[function(require,module,exports) {
+},{}],92:[function(require,module,exports) {
 "use strict";
 
 /**
@@ -19457,7 +19457,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 module.exports = emptyFunction;
-},{}],84:[function(require,module,exports) {
+},{}],79:[function(require,module,exports) {
 /** @license React v16.3.2
  * react.production.min.js
  *
@@ -19570,7 +19570,7 @@ var W = { Children: { map: function (a, b, e) {
   }, isValidElement: M, version: "16.3.2", __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: { ReactCurrentOwner: I, assign: m } },
     X = Object.freeze({ default: W }),
     Y = X && W || X;module.exports = Y["default"] ? Y["default"] : Y;
-},{"object-assign":105,"fbjs/lib/invariant":101,"fbjs/lib/emptyObject":104,"fbjs/lib/emptyFunction":103}],102:[function(require,module,exports) {
+},{"object-assign":96,"fbjs/lib/invariant":94,"fbjs/lib/emptyObject":102,"fbjs/lib/emptyFunction":92}],95:[function(require,module,exports) {
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
  *
@@ -19633,7 +19633,7 @@ if ('development' !== 'production') {
 }
 
 module.exports = warning;
-},{"./emptyFunction":103}],91:[function(require,module,exports) {
+},{"./emptyFunction":92}],90:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -19647,7 +19647,7 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
 
-},{}],90:[function(require,module,exports) {
+},{}],89:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -19707,7 +19707,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 }
 
 module.exports = checkPropTypes;
-},{"fbjs/lib/invariant":101,"fbjs/lib/warning":102,"./lib/ReactPropTypesSecret":91}],87:[function(require,module,exports) {
+},{"fbjs/lib/invariant":94,"fbjs/lib/warning":95,"./lib/ReactPropTypesSecret":90}],80:[function(require,module,exports) {
 /** @license React v16.3.2
  * react.development.js
  *
@@ -21116,7 +21116,7 @@ if ('development' !== "production") {
     module.exports = react;
   })();
 }
-},{"object-assign":105,"fbjs/lib/invariant":101,"fbjs/lib/emptyObject":104,"fbjs/lib/warning":102,"fbjs/lib/emptyFunction":103,"prop-types/checkPropTypes":90}],64:[function(require,module,exports) {
+},{"object-assign":96,"fbjs/lib/invariant":94,"fbjs/lib/emptyObject":102,"fbjs/lib/warning":95,"fbjs/lib/emptyFunction":92,"prop-types/checkPropTypes":89}],62:[function(require,module,exports) {
 'use strict';
 
 if ('development' === 'production') {
@@ -21124,7 +21124,7 @@ if ('development' === 'production') {
 } else {
   module.exports = require('./cjs/react.development.js');
 }
-},{"./cjs/react.production.min.js":84,"./cjs/react.development.js":87}],86:[function(require,module,exports) {
+},{"./cjs/react.production.min.js":79,"./cjs/react.development.js":80}],77:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -21641,7 +21641,7 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
 
   return ReactPropTypes;
 };
-},{"fbjs/lib/emptyFunction":103,"fbjs/lib/invariant":101,"fbjs/lib/warning":102,"object-assign":105,"./lib/ReactPropTypesSecret":91,"./checkPropTypes":90}],85:[function(require,module,exports) {
+},{"fbjs/lib/emptyFunction":92,"fbjs/lib/invariant":94,"fbjs/lib/warning":95,"object-assign":96,"./lib/ReactPropTypesSecret":90,"./checkPropTypes":89}],78:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -21701,7 +21701,7 @@ module.exports = function() {
   return ReactPropTypes;
 };
 
-},{"fbjs/lib/emptyFunction":103,"fbjs/lib/invariant":101,"./lib/ReactPropTypesSecret":91}],69:[function(require,module,exports) {
+},{"fbjs/lib/emptyFunction":92,"fbjs/lib/invariant":94,"./lib/ReactPropTypesSecret":90}],60:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -21725,7 +21725,7 @@ if ('development' !== 'production') {
   // http://fb.me/prop-types-in-prod
   module.exports = require('./factoryWithThrowingShims')();
 }
-},{"./factoryWithTypeCheckers":86,"./factoryWithThrowingShims":85}],74:[function(require,module,exports) {
+},{"./factoryWithTypeCheckers":77,"./factoryWithThrowingShims":78}],63:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -21772,7 +21772,7 @@ var invariant = function (condition, format, a, b, c, d, e, f) {
 };
 
 module.exports = invariant;
-},{}],96:[function(require,module,exports) {
+},{}],91:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -21848,7 +21848,7 @@ function resolvePathname(to) {
 }
 
 exports.default = resolvePathname;
-},{}],100:[function(require,module,exports) {
+},{}],93:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -21896,7 +21896,7 @@ function valueEqual(a, b) {
 }
 
 exports.default = valueEqual;
-},{}],81:[function(require,module,exports) {
+},{}],84:[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -21958,7 +21958,7 @@ var createPath = exports.createPath = function createPath(location) {
 
   return path;
 };
-},{}],83:[function(require,module,exports) {
+},{}],81:[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -22037,7 +22037,7 @@ var createLocation = exports.createLocation = function createLocation(path, stat
 var locationsAreEqual = exports.locationsAreEqual = function locationsAreEqual(a, b) {
   return a.pathname === b.pathname && a.search === b.search && a.hash === b.hash && a.key === b.key && (0, _valueEqual2.default)(a.state, b.state);
 };
-},{"resolve-pathname":96,"value-equal":100,"./PathUtils":81}],80:[function(require,module,exports) {
+},{"resolve-pathname":91,"value-equal":93,"./PathUtils":84}],82:[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -22123,7 +22123,7 @@ var createTransitionManager = function createTransitionManager() {
 };
 
 exports.default = createTransitionManager;
-},{"warning":75}],82:[function(require,module,exports) {
+},{"warning":61}],83:[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -22179,7 +22179,7 @@ var supportsGoWithoutReloadUsingHash = exports.supportsGoWithoutReloadUsingHash 
 var isExtraneousPopstateEvent = exports.isExtraneousPopstateEvent = function isExtraneousPopstateEvent(event) {
   return event.state === undefined && navigator.userAgent.indexOf('CriOS') === -1;
 };
-},{}],79:[function(require,module,exports) {
+},{}],64:[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -22487,7 +22487,7 @@ var createBrowserHistory = function createBrowserHistory() {
 };
 
 exports.default = createBrowserHistory;
-},{"warning":75,"invariant":74,"./LocationUtils":83,"./PathUtils":81,"./createTransitionManager":80,"./DOMUtils":82}],70:[function(require,module,exports) {
+},{"warning":61,"invariant":63,"./LocationUtils":81,"./PathUtils":84,"./createTransitionManager":82,"./DOMUtils":83}],73:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22630,7 +22630,7 @@ Router.childContextTypes = {
 };
 
 exports.default = Router;
-},{"warning":75,"invariant":74,"react":64,"prop-types":69}],53:[function(require,module,exports) {
+},{"warning":61,"invariant":63,"react":62,"prop-types":60}],38:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22644,7 +22644,7 @@ var _Router2 = _interopRequireDefault(_Router);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Router2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/es/Router":70}],57:[function(require,module,exports) {
+},{"react-router/es/Router":73}],30:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22730,7 +22730,7 @@ BrowserRouter.propTypes = {
 };
 
 exports.default = BrowserRouter;
-},{"warning":75,"react":64,"prop-types":69,"history/createBrowserHistory":79,"./Router":53}],66:[function(require,module,exports) {
+},{"warning":61,"react":62,"prop-types":60,"history/createBrowserHistory":64,"./Router":38}],65:[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -23055,7 +23055,7 @@ var createHashHistory = function createHashHistory() {
 };
 
 exports.default = createHashHistory;
-},{"warning":75,"invariant":74,"./LocationUtils":83,"./PathUtils":81,"./createTransitionManager":80,"./DOMUtils":82}],50:[function(require,module,exports) {
+},{"warning":61,"invariant":63,"./LocationUtils":81,"./PathUtils":84,"./createTransitionManager":82,"./DOMUtils":83}],31:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -23140,7 +23140,7 @@ HashRouter.propTypes = {
 };
 
 exports.default = HashRouter;
-},{"warning":75,"react":64,"prop-types":69,"history/createHashHistory":66,"./Router":53}],49:[function(require,module,exports) {
+},{"warning":61,"react":62,"prop-types":60,"history/createHashHistory":65,"./Router":38}],32:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -23277,7 +23277,7 @@ Link.contextTypes = {
 };
 
 exports.default = Link;
-},{"react":64,"prop-types":69,"invariant":74}],89:[function(require,module,exports) {
+},{"react":62,"prop-types":60,"invariant":63}],86:[function(require,module,exports) {
 'use strict';
 
 exports.__esModule = true;
@@ -23448,7 +23448,7 @@ var createMemoryHistory = function createMemoryHistory() {
 };
 
 exports.default = createMemoryHistory;
-},{"warning":75,"./PathUtils":81,"./LocationUtils":83,"./createTransitionManager":80}],68:[function(require,module,exports) {
+},{"warning":61,"./PathUtils":84,"./LocationUtils":81,"./createTransitionManager":82}],66:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -23534,7 +23534,7 @@ MemoryRouter.propTypes = {
 };
 
 exports.default = MemoryRouter;
-},{"warning":75,"react":64,"prop-types":69,"history/createMemoryHistory":89,"./Router":70}],45:[function(require,module,exports) {
+},{"warning":61,"react":62,"prop-types":60,"history/createMemoryHistory":86,"./Router":73}],33:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23548,12 +23548,12 @@ var _MemoryRouter2 = _interopRequireDefault(_MemoryRouter);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _MemoryRouter2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/es/MemoryRouter":68}],108:[function(require,module,exports) {
+},{"react-router/es/MemoryRouter":66}],103:[function(require,module,exports) {
 module.exports = Array.isArray || function (arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 };
 
-},{}],92:[function(require,module,exports) {
+},{}],88:[function(require,module,exports) {
 var isarray = require('isarray')
 
 /**
@@ -23981,7 +23981,7 @@ function pathToRegexp (path, keys, options) {
   return stringToRegexp(/** @type {string} */ (path), /** @type {!Array} */ (keys), options)
 }
 
-},{"isarray":108}],72:[function(require,module,exports) {
+},{"isarray":103}],75:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24061,7 +24061,7 @@ var matchPath = function matchPath(pathname) {
 };
 
 exports.default = matchPath;
-},{"path-to-regexp":92}],71:[function(require,module,exports) {
+},{"path-to-regexp":88}],72:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24237,7 +24237,7 @@ Route.childContextTypes = {
 };
 
 exports.default = Route;
-},{"warning":75,"invariant":74,"react":64,"prop-types":69,"./matchPath":72}],52:[function(require,module,exports) {
+},{"warning":61,"invariant":63,"react":62,"prop-types":60,"./matchPath":75}],37:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24251,7 +24251,7 @@ var _Route2 = _interopRequireDefault(_Route);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Route2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/es/Route":71}],46:[function(require,module,exports) {
+},{"react-router/es/Route":72}],34:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24356,7 +24356,7 @@ NavLink.defaultProps = {
 };
 
 exports.default = NavLink;
-},{"react":64,"prop-types":69,"./Route":52,"./Link":49}],73:[function(require,module,exports) {
+},{"react":62,"prop-types":60,"./Route":37,"./Link":32}],68:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24463,7 +24463,7 @@ Prompt.contextTypes = {
 };
 
 exports.default = Prompt;
-},{"react":64,"prop-types":69,"invariant":74}],47:[function(require,module,exports) {
+},{"react":62,"prop-types":60,"invariant":63}],35:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24477,7 +24477,7 @@ var _Prompt2 = _interopRequireDefault(_Prompt);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Prompt2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/es/Prompt":73}],98:[function(require,module,exports) {
+},{"react-router/es/Prompt":68}],101:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24540,7 +24540,7 @@ var createPath = exports.createPath = function createPath(location) {
 
   return path;
 };
-},{}],99:[function(require,module,exports) {
+},{}],100:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24629,7 +24629,7 @@ var createLocation = exports.createLocation = function createLocation(path, stat
 var locationsAreEqual = exports.locationsAreEqual = function locationsAreEqual(a, b) {
   return a.pathname === b.pathname && a.search === b.search && a.hash === b.hash && a.key === b.key && (0, _valueEqual2.default)(a.state, b.state);
 };
-},{"resolve-pathname":96,"value-equal":100,"./PathUtils":98}],107:[function(require,module,exports) {
+},{"resolve-pathname":91,"value-equal":93,"./PathUtils":101}],104:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24717,7 +24717,7 @@ var createTransitionManager = function createTransitionManager() {
 };
 
 exports.default = createTransitionManager;
-},{"warning":75}],106:[function(require,module,exports) {
+},{"warning":61}],105:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25094,7 +25094,7 @@ var createBrowserHistory = function createBrowserHistory() {
 };
 
 exports.default = createBrowserHistory;
-},{"warning":75,"invariant":74,"./LocationUtils":99,"./PathUtils":98,"./createTransitionManager":107,"./DOMUtils":106}],95:[function(require,module,exports) {
+},{"warning":61,"invariant":63,"./LocationUtils":100,"./PathUtils":101,"./createTransitionManager":104,"./DOMUtils":105}],98:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25428,7 +25428,7 @@ var createHashHistory = function createHashHistory() {
 };
 
 exports.default = createHashHistory;
-},{"warning":75,"invariant":74,"./LocationUtils":99,"./PathUtils":98,"./createTransitionManager":107,"./DOMUtils":106}],94:[function(require,module,exports) {
+},{"warning":61,"invariant":63,"./LocationUtils":100,"./PathUtils":101,"./createTransitionManager":104,"./DOMUtils":105}],99:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25612,7 +25612,7 @@ var createMemoryHistory = function createMemoryHistory() {
 };
 
 exports.default = createMemoryHistory;
-},{"warning":75,"./PathUtils":98,"./LocationUtils":99,"./createTransitionManager":107}],88:[function(require,module,exports) {
+},{"warning":61,"./PathUtils":101,"./LocationUtils":100,"./createTransitionManager":104}],85:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25667,7 +25667,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.createBrowserHistory = _createBrowserHistory3.default;
 exports.createHashHistory = _createHashHistory3.default;
 exports.createMemoryHistory = _createMemoryHistory3.default;
-},{"./createBrowserHistory":97,"./createHashHistory":95,"./createMemoryHistory":94,"./LocationUtils":99,"./PathUtils":98}],67:[function(require,module,exports) {
+},{"./createBrowserHistory":97,"./createHashHistory":98,"./createMemoryHistory":99,"./LocationUtils":100,"./PathUtils":101}],67:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25791,7 +25791,7 @@ Redirect.contextTypes = {
 };
 
 exports.default = Redirect;
-},{"react":64,"prop-types":69,"warning":75,"invariant":74,"history":88}],48:[function(require,module,exports) {
+},{"react":62,"prop-types":60,"warning":61,"invariant":63,"history":85}],36:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25805,7 +25805,7 @@ var _Redirect2 = _interopRequireDefault(_Redirect);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Redirect2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/es/Redirect":67}],65:[function(require,module,exports) {
+},{"react-router/es/Redirect":67}],71:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -26017,7 +26017,7 @@ StaticRouter.childContextTypes = {
 };
 
 exports.default = StaticRouter;
-},{"warning":75,"invariant":74,"react":64,"prop-types":69,"history/PathUtils":81,"./Router":70}],51:[function(require,module,exports) {
+},{"warning":61,"invariant":63,"react":62,"prop-types":60,"history/PathUtils":84,"./Router":73}],39:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -26031,7 +26031,7 @@ var _StaticRouter2 = _interopRequireDefault(_StaticRouter);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _StaticRouter2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/es/StaticRouter":65}],76:[function(require,module,exports) {
+},{"react-router/es/StaticRouter":71}],69:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -26144,7 +26144,7 @@ Switch.propTypes = {
 };
 
 exports.default = Switch;
-},{"react":64,"prop-types":69,"warning":75,"invariant":74,"./matchPath":72}],54:[function(require,module,exports) {
+},{"react":62,"prop-types":60,"warning":61,"invariant":63,"./matchPath":75}],40:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -26158,7 +26158,7 @@ var _Switch2 = _interopRequireDefault(_Switch);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Switch2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/es/Switch":76}],55:[function(require,module,exports) {
+},{"react-router/es/Switch":69}],41:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -26172,7 +26172,7 @@ var _matchPath2 = _interopRequireDefault(_matchPath);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _matchPath2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/es/matchPath":72}],93:[function(require,module,exports) {
+},{"react-router/es/matchPath":75}],87:[function(require,module,exports) {
 var global = (1,eval)("this");
 /**
  * Copyright 2015, Yahoo! Inc.
@@ -26247,7 +26247,7 @@ var global = (1,eval)("this");
     };
 })));
 
-},{}],77:[function(require,module,exports) {
+},{}],74:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -26311,7 +26311,7 @@ var withRouter = function withRouter(Component) {
 };
 
 exports.default = withRouter;
-},{"react":64,"prop-types":69,"hoist-non-react-statics":93,"./Route":71}],56:[function(require,module,exports) {
+},{"react":62,"prop-types":60,"hoist-non-react-statics":87,"./Route":72}],42:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -26325,7 +26325,7 @@ var _withRouter2 = _interopRequireDefault(_withRouter);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _withRouter2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/es/withRouter":77}],25:[function(require,module,exports) {
+},{"react-router/es/withRouter":74}],19:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -26400,7 +26400,7 @@ exports.StaticRouter = _StaticRouter3.default;
 exports.Switch = _Switch3.default;
 exports.matchPath = _matchPath3.default;
 exports.withRouter = _withRouter3.default;
-},{"./BrowserRouter":57,"./HashRouter":50,"./Link":49,"./MemoryRouter":45,"./NavLink":46,"./Prompt":47,"./Redirect":48,"./Route":52,"./Router":53,"./StaticRouter":51,"./Switch":54,"./matchPath":55,"./withRouter":56}],24:[function(require,module,exports) {
+},{"./BrowserRouter":30,"./HashRouter":31,"./Link":32,"./MemoryRouter":33,"./NavLink":34,"./Prompt":35,"./Redirect":36,"./Route":37,"./Router":38,"./StaticRouter":39,"./Switch":40,"./matchPath":41,"./withRouter":42}],27:[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {};
@@ -26587,7 +26587,7 @@ process.chdir = function (dir) {
 process.umask = function () {
     return 0;
 };
-},{}],14:[function(require,module,exports) {
+},{}],20:[function(require,module,exports) {
 var process = require("process");
 var global = (1,eval)("this");
 "use strict";
@@ -30327,7 +30327,7 @@ exports.isArrayLike = isArrayLike;
 exports._isComputingDerivation = isComputingDerivation;
 exports.onReactionError = onReactionError;
 exports._interceptReads = interceptReads;
-},{"process":24}],8:[function(require,module,exports) {
+},{"process":27}],9:[function(require,module,exports) {
 var global = (1,eval)("this");
 'use strict';
 
@@ -31504,7 +31504,7 @@ exports.trackComponents = trackComponents;
 exports.useStaticRendering = useStaticRendering;
 exports.Provider = Provider;
 exports.inject = inject;
-},{"mobx":14,"react":7,"react-dom":9}],27:[function(require,module,exports) {
+},{"mobx":20,"react":8,"react-dom":7}],25:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31559,7 +31559,7 @@ var ObjednavkaComponent = /** @class */function (_super) {
     return ObjednavkaComponent;
 }(React.Component);
 exports.ObjednavkaComponent = ObjednavkaComponent;
-},{"react":7,"mobx-react":8}],15:[function(require,module,exports) {
+},{"react":8,"mobx-react":9}],12:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31620,7 +31620,7 @@ var ObjednavkyComponent = /** @class */function (_super) {
     return ObjednavkyComponent;
 }(React.Component);
 exports.ObjednavkyComponent = ObjednavkyComponent;
-},{"react":7,"mobx-react":8,"./ObjednavkaComponent":27}],17:[function(require,module,exports) {
+},{"react":8,"mobx-react":9,"./ObjednavkaComponent":25}],13:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31664,7 +31664,7 @@ var MyMenu = /** @class */function (_super) {
     return MyMenu;
 }(React.Component);
 exports.MyMenu = MyMenu;
-},{"react":7,"react-router-dom":25}],29:[function(require,module,exports) {
+},{"react":8,"react-router-dom":19}],24:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31719,7 +31719,7 @@ var UzivatelComponent = /** @class */function (_super) {
     return UzivatelComponent;
 }(React.Component);
 exports.UzivatelComponent = UzivatelComponent;
-},{"react":7,"mobx-react":8}],16:[function(require,module,exports) {
+},{"react":8,"mobx-react":9}],14:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31780,7 +31780,7 @@ var UzivateleComponent = /** @class */function (_super) {
     return UzivateleComponent;
 }(React.Component);
 exports.UzivateleComponent = UzivateleComponent;
-},{"react":7,"mobx-react":8,"./UzivatelComponent":29}],31:[function(require,module,exports) {
+},{"react":8,"mobx-react":9,"./UzivatelComponent":24}],28:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31829,7 +31829,7 @@ var DochazkaRowComponent = /** @class */function (_super) {
         return _super.call(this, props) || this;
     }
     DochazkaRowComponent.prototype.render = function () {
-        return React.createElement("tr", { className: "", key: this.props.dochazkaRowModel.dochazka.id }, React.createElement("td", { className: "objItem" }, this.props.dochazkaRowModel.dochazka.prichod), this.getOdchodComponent(), React.createElement("td", { className: this.getClassNameByTypPrace() }, this.props.dochazkaRowModel.dochazka.TypPraceUzivatele.typPraceUzivatele, " "), React.createElement("td", { className: this.getClassNameByPracuje() }, this.props.dochazkaRowModel.jeVPraci ? "v praci" : "nepracuje", " "), React.createElement("td", null, React.createElement("button", { type: "button", className: "btn btn-success" }, "Edit")));
+        return React.createElement("tr", { className: "", key: this.props.dochazkaRowModel.dochazka.id }, React.createElement("td", { className: "objItem" }, this.props.dochazkaRowModel.dochazka.Uzivatel.nickName), React.createElement("td", { className: "objItem" }, this.props.dochazkaRowModel.dochazka.prichod), this.getOdchodComponent(), React.createElement("td", { className: this.getClassNameByTypPrace() }, this.props.dochazkaRowModel.dochazka.TypPraceUzivatele.typPraceUzivatele, " "), React.createElement("td", { className: this.getClassNameByPracuje() }, this.props.dochazkaRowModel.jeVPraci ? "v praci" : "nepracuje", " "), React.createElement("td", null, React.createElement("button", { type: "button", className: "btn btn-success" }, "Edit")));
     };
     DochazkaRowComponent.prototype.getOdchodComponent = function () {
         if (this.props.dochazkaRowModel.jeVPraci) {
@@ -31866,13 +31866,13 @@ var DochazkaRowComponent = /** @class */function (_super) {
     return DochazkaRowComponent;
 }(React.Component);
 exports.DochazkaRowComponent = DochazkaRowComponent;
-},{"react":7,"mobx-react":8}],30:[function(require,module,exports) {
+},{"react":8,"mobx-react":9}],70:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.NewDochazkaComponent = undefined;
+exports.TypPraceSelectComponent = undefined;
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
@@ -31909,19 +31909,245 @@ var __decorate = undefined && undefined.__decorate || function (decorators, targ
     }return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 
+var TypPraceSelectComponent = /** @class */function (_super) {
+    __extends(TypPraceSelectComponent, _super);
+    function TypPraceSelectComponent(props) {
+        return _super.call(this, props) || this;
+    }
+    TypPraceSelectComponent.prototype.render = function () {
+        var _this = this;
+        var list = this.props.typyPrace.map(function (t) {
+            return React.createElement("option", { key: t.id, value: t.id }, t.typPraceUzivatele);
+        });
+        var first = this.props.typyPrace.find(function (i) {
+            return true;
+        });
+        if (first != null) {
+            this.props.selected(first.id);
+        }
+        return React.createElement("select", { defaultValue: "směna", className: "form-control", onChange: function onChange(e) {
+                _this.props.selected(e.target.value);
+            } }, list);
+    };
+    TypPraceSelectComponent = __decorate([_mobxReact.observer], TypPraceSelectComponent);
+    return TypPraceSelectComponent;
+}(React.Component);
+exports.TypPraceSelectComponent = TypPraceSelectComponent;
+},{"react":8,"mobx-react":9}],110:[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.UzivatelSelectComponent = undefined;
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _react = require("react");
+
+var React = _interopRequireWildcard(_react);
+
+var _mobxReact = require("mobx-react");
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+var __extends = undefined && undefined.__extends || function () {
+    var extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function (d, b) {
+        d.__proto__ = b;
+    } || function (d, b) {
+        for (var p in b) {
+            if (b.hasOwnProperty(p)) d[p] = b[p];
+        }
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() {
+            this.constructor = d;
+        }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+}();
+var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
+    var c = arguments.length,
+        r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+        d;
+    if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
+        if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    }return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var UzivatelSelectComponent = /** @class */function (_super) {
+    __extends(UzivatelSelectComponent, _super);
+    function UzivatelSelectComponent(props) {
+        return _super.call(this, props) || this;
+    }
+    UzivatelSelectComponent.prototype.render = function () {
+        var _this = this;
+        var list = this.props.uzivatele.map(function (u) {
+            return React.createElement("option", { value: u.id, key: u.id }, u.nickName);
+        });
+        var first = this.props.uzivatele.find(function (i) {
+            return true;
+        });
+        if (first != null) {
+            this.props.selected(first.id);
+        }
+        return React.createElement("select", { defaultValue: "směna", className: "form-control", onChange: function onChange(e) {
+                return _this.props.selected(e.target.value);
+            } }, list);
+    };
+    UzivatelSelectComponent = __decorate([_mobxReact.observer], UzivatelSelectComponent);
+    return UzivatelSelectComponent;
+}(React.Component);
+exports.UzivatelSelectComponent = UzivatelSelectComponent;
+},{"react":8,"mobx-react":9}],114:[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.AutoSelectComponent = undefined;
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _react = require("react");
+
+var React = _interopRequireWildcard(_react);
+
+var _mobxReact = require("mobx-react");
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+var __extends = undefined && undefined.__extends || function () {
+    var extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function (d, b) {
+        d.__proto__ = b;
+    } || function (d, b) {
+        for (var p in b) {
+            if (b.hasOwnProperty(p)) d[p] = b[p];
+        }
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() {
+            this.constructor = d;
+        }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+}();
+var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
+    var c = arguments.length,
+        r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+        d;
+    if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
+        if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    }return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var AutoSelectComponent = /** @class */function (_super) {
+    __extends(AutoSelectComponent, _super);
+    function AutoSelectComponent(props) {
+        return _super.call(this, props) || this;
+    }
+    AutoSelectComponent.prototype.render = function () {
+        var _this = this;
+        var list = this.props.auta.map(function (a) {
+            return React.createElement("option", { key: a.id, value: a.id }, a.znacka, " ", a.barva, " ", a.idVysilacka);
+        });
+        var first = this.props.auta.find(function (i) {
+            return true;
+        });
+        if (first != null) {
+            this.props.selected(first.id);
+        }
+        return React.createElement("select", { className: "form-control", onChange: function onChange(e) {
+                _this.props.selected(e.target.value);
+            } }, list);
+    };
+    AutoSelectComponent = __decorate([_mobxReact.observer], AutoSelectComponent);
+    return AutoSelectComponent;
+}(React.Component);
+exports.AutoSelectComponent = AutoSelectComponent;
+},{"react":8,"mobx-react":9}],29:[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.NewDochazkaComponent = undefined;
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _react = require("react");
+
+var React = _interopRequireWildcard(_react);
+
+var _mobxReact = require("mobx-react");
+
+var _TypPraceSelectComponent = require("./TypPraceSelectComponent");
+
+var _UzivatelSelectComponent = require("./UzivatelSelectComponent");
+
+var _mobx = require("mobx");
+
+var _AutoSelectComponent = require("./AutoSelectComponent");
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+var __extends = undefined && undefined.__extends || function () {
+    var extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function (d, b) {
+        d.__proto__ = b;
+    } || function (d, b) {
+        for (var p in b) {
+            if (b.hasOwnProperty(p)) d[p] = b[p];
+        }
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() {
+            this.constructor = d;
+        }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+}();
+var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
+    var c = arguments.length,
+        r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+        d;
+    if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
+        if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    }return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
 var NewDochazkaComponent = /** @class */function (_super) {
     __extends(NewDochazkaComponent, _super);
     function NewDochazkaComponent(props) {
         return _super.call(this, props) || this;
     }
     NewDochazkaComponent.prototype.render = function () {
-        return React.createElement("form", { className: "form-inline" }, React.createElement("div", { className: "form-group mb-2" }, React.createElement("input", { type: "text", readonly: true, className: "form-control-plaintext", id: "staticEmail2", value: "email@example.com" })), React.createElement("div", { className: "form-group mx-sm-3 mb-2" }, React.createElement("input", { type: "password", className: "form-control", id: "inputPassword2", placeholder: "Password" })), React.createElement("button", { type: "submit", className: "btn btn-primary mb-2" }, "Confirm identity"));
+        return React.createElement("form", { className: "form-inline" }, React.createElement("div", { className: "form-group mb-2" }, React.createElement(_UzivatelSelectComponent.UzivatelSelectComponent, { uzivatele: this.props.uzivateleModel.uzivatele, selected: this.uzivatelSelected })), React.createElement("div", { className: "form-group mx-sm-3 mb-2" }, React.createElement(_TypPraceSelectComponent.TypPraceSelectComponent, { typyPrace: this.props.typPraceModel.array, selected: this.typPraceSelected })), React.createElement("div", { className: "form-group mx-sm-3 mb-2" }, React.createElement(_AutoSelectComponent.AutoSelectComponent, { auta: this.props.autoModel.auta, selected: this.autoSelected })), React.createElement("button", { type: "button", className: "btn btn-primary mb-2", onClick: this.prichodClicked }, "P\u0159\xEDchod"));
     };
+    NewDochazkaComponent.prototype.typPraceSelected = function (id) {
+        this.typPraceId = id;
+    };
+    NewDochazkaComponent.prototype.uzivatelSelected = function (id) {
+        this.uzivatelId = id;
+    };
+    NewDochazkaComponent.prototype.autoSelected = function (id) {
+        this.autoId = id;
+    };
+    NewDochazkaComponent.prototype.prichodClicked = function () {
+        this.props.prichodRidice(this.uzivatelId, this.typPraceId, this.autoId);
+        console.log("Prichod", this.typPraceId, this.uzivatelId, this.autoId);
+    };
+    __decorate([_mobx.action.bound], NewDochazkaComponent.prototype, "typPraceSelected", null);
+    __decorate([_mobx.action.bound], NewDochazkaComponent.prototype, "uzivatelSelected", null);
+    __decorate([_mobx.action.bound], NewDochazkaComponent.prototype, "autoSelected", null);
+    __decorate([_mobx.action.bound], NewDochazkaComponent.prototype, "prichodClicked", null);
     NewDochazkaComponent = __decorate([_mobxReact.observer], NewDochazkaComponent);
     return NewDochazkaComponent;
 }(React.Component);
 exports.NewDochazkaComponent = NewDochazkaComponent;
-},{"react":7,"mobx-react":8}],22:[function(require,module,exports) {
+},{"react":8,"mobx-react":9,"./TypPraceSelectComponent":70,"./UzivatelSelectComponent":110,"mobx":20,"./AutoSelectComponent":114}],15:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31975,7 +32201,7 @@ var DochazkaComponent = /** @class */function (_super) {
     }
     DochazkaComponent.prototype.render = function () {
         console.log(this.props.dochazkaStore);
-        return React.createElement("div", { className: "card" }, React.createElement("div", { className: "card-header" }, React.createElement(_NewDochazkaComponent.NewDochazkaComponent, { typyPrace: this.props.dochazkaStore.typPraceModel.array, uzivatele: this.props.dochazkaStore.uzivateleModel.uzivatele, prichod: this.props.dochazkaStore.prichodOsoby })), React.createElement("div", { className: "card-body" }, React.createElement("table", { key: 1234, className: "table" }, React.createElement("thead", null, this.makeTableHeader()), React.createElement("tbody", null, this.makeTableRows()))));
+        return React.createElement("div", { className: "card" }, React.createElement("div", { className: "card-header" }, React.createElement(_NewDochazkaComponent.NewDochazkaComponent, { typPraceModel: this.props.dochazkaStore.typPraceModel, uzivateleModel: this.props.dochazkaStore.uzivateleModel, autoModel: this.props.dochazkaStore.autoModel, prichodRidice: this.props.dochazkaStore.prichodOsoby })), React.createElement("div", { className: "card-body" }, React.createElement("table", { key: 1234, className: "table" }, React.createElement("thead", null, this.makeTableHeader()), React.createElement("tbody", null, this.makeTableRows()))));
     };
     DochazkaComponent.prototype.makeTableRows = function () {
         var list = this.props.dochazkaStore.DochazkaNepritomni.map(function (d) {
@@ -31984,14 +32210,14 @@ var DochazkaComponent = /** @class */function (_super) {
         return list;
     };
     DochazkaComponent.prototype.makeTableHeader = function () {
-        var result = React.createElement("tr", null, React.createElement("th", null, "P\u0159\xEDchod"), React.createElement("th", null, "Odchod"), React.createElement("th", null, "Typ prace"), React.createElement("th", null, "Pracuje"), React.createElement("th", null, "Volby"));
+        var result = React.createElement("tr", null, React.createElement("th", null, "Jm\xE9no"), React.createElement("th", null, "P\u0159\xEDchod"), React.createElement("th", null, "Odchod"), React.createElement("th", null, "Typ prace"), React.createElement("th", null, "Pracuje"), React.createElement("th", null, "Volby"));
         return result;
     };
     DochazkaComponent = __decorate([(0, _mobxReact.inject)('dochazkaStore'), _mobxReact.observer], DochazkaComponent);
     return DochazkaComponent;
 }(React.Component);
 exports.DochazkaComponent = DochazkaComponent;
-},{"react":7,"mobx-react":8,"./DochazkaRowComponent":31,"./NewDochazkaComponent":30}],58:[function(require,module,exports) {
+},{"react":8,"mobx-react":9,"./DochazkaRowComponent":28,"./NewDochazkaComponent":29}],55:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32041,18 +32267,24 @@ var StavSelectComponent = /** @class */function (_super) {
     }
     StavSelectComponent.prototype.render = function () {
         var _this = this;
-        var list = this.props.dochazkaRowModel.stavModel.array.map(function (s) {
-            return React.createElement("option", { key: s.id }, s.nazevStavu);
+        var list = this.props.stavy.map(function (s) {
+            return React.createElement("option", { key: s.id, value: s.id }, s.nazevStavu);
         });
-        return React.createElement("select", { defaultValue: this.props.dochazkaRowModel.dochazka.StavUzivatele.nazevStavu, className: "form-control", onChange: function onChange(e) {
-                _this.props.dochazkaRowModel.stavChanged(e.target.value);
+        var first = this.props.stavy.find(function (i) {
+            return true;
+        });
+        if (first != null) {
+            this.props.selected(first.id);
+        }
+        return React.createElement("select", { className: "form-control", onChange: function onChange(e) {
+                _this.props.selected(e.target.value);
             } }, list);
     };
     StavSelectComponent = __decorate([_mobxReact.observer], StavSelectComponent);
     return StavSelectComponent;
 }(React.Component);
 exports.StavSelectComponent = StavSelectComponent;
-},{"react":7,"mobx-react":8}],26:[function(require,module,exports) {
+},{"react":8,"mobx-react":9}],26:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32103,7 +32335,7 @@ var PrehledRowComponent = /** @class */function (_super) {
         return _super.call(this, props) || this;
     }
     PrehledRowComponent.prototype.render = function () {
-        return React.createElement("tr", { className: "", key: this.props.prehledRowModel.dochazka.id }, React.createElement("td", { className: "objItem" }, this.props.prehledRowModel.dochazka.Uzivatel.nickName), React.createElement("td", { className: "objItem" }, this.props.prehledRowModel.dochazka.Uzivatel.role.nazevRole), React.createElement("td", { className: "objItem" }, this.props.prehledRowModel.dochazka.prichod), this.getOdchodComponent(), React.createElement("td", { className: this.getClassNameByStavUzivatele() }, React.createElement(_StavSelectCopmonent.StavSelectComponent, { key: this.props.prehledRowModel.dochazka.id, dochazkaRowModel: this.props.prehledRowModel })), React.createElement("td", { className: this.getClassNameByTypPrace() }, this.props.prehledRowModel.dochazka.TypPraceUzivatele.typPraceUzivatele, " "));
+        return React.createElement("tr", { className: "", key: this.props.prehledRowModel.dochazka.id }, React.createElement("td", { className: "objItem" }, this.props.prehledRowModel.dochazka.Uzivatel.nickName), React.createElement("td", { className: "objItem" }, this.props.prehledRowModel.dochazka.Uzivatel.role.nazevRole), React.createElement("td", { className: "objItem" }, this.props.prehledRowModel.dochazka.prichod), this.getOdchodComponent(), React.createElement("td", { className: this.getClassNameByStavUzivatele() }, React.createElement(_StavSelectCopmonent.StavSelectComponent, { key: this.props.prehledRowModel.dochazka.id, stavy: this.props.prehledRowModel.stavModel.array, selected: this.props.prehledRowModel.stavChanged })), React.createElement("td", { className: this.getClassNameByTypPrace() }, this.props.prehledRowModel.dochazka.TypPraceUzivatele.typPraceUzivatele, " "));
     };
     //
     PrehledRowComponent.prototype.getOdchodComponent = function () {
@@ -32146,7 +32378,7 @@ var PrehledRowComponent = /** @class */function (_super) {
     return PrehledRowComponent;
 }(React.Component);
 exports.PrehledRowComponent = PrehledRowComponent;
-},{"react":7,"mobx-react":8,"./StavSelectCopmonent":58}],18:[function(require,module,exports) {
+},{"react":8,"mobx-react":9,"./StavSelectCopmonent":55}],16:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32214,7 +32446,7 @@ var PrehledComponent = /** @class */function (_super) {
     return PrehledComponent;
 }(React.Component);
 exports.PrehledComponent = PrehledComponent;
-},{"react":7,"mobx-react":8,"./PrehledRowComponent":26}],2:[function(require,module,exports) {
+},{"react":8,"mobx-react":9,"./PrehledRowComponent":26}],2:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -32267,7 +32499,7 @@ var App = /** @class */function (_super) {
     return App;
 }(React.Component);
 exports.default = App;
-},{"react":7,"react-router-dom":25,"./Copmponents/ObjednavkyComponent":15,"./Copmponents/MyMenu":17,"./Copmponents/UzivateleComponent":16,"./Copmponents/DochazkaComponent":22,"./Copmponents/PrehledComponent":18}],3:[function(require,module,exports) {
+},{"react":8,"react-router-dom":19,"./Copmponents/ObjednavkyComponent":12,"./Copmponents/MyMenu":13,"./Copmponents/UzivateleComponent":14,"./Copmponents/DochazkaComponent":15,"./Copmponents/PrehledComponent":16}],3:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32324,6 +32556,22 @@ var ApiRequest = /** @class */function () {
             return res.json();
         });
     };
+    ApiRequest.prototype.postDochazka = function (dochazka) {
+        var obj = dochazka;
+        console.log("POST: " + JSON.stringify(obj));
+        var url = this.urlPrefix2 + "/public/Dochazka";
+        return fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(dochazka),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(function (res) {
+            return res.json();
+        }).catch(function (error) {
+            return console.error('Error:', error);
+        });
+    };
     ApiRequest.prototype.getStavy = function () {
         var myHeaders = new Headers();
         myHeaders.append("Accept", "application/json");
@@ -32346,6 +32594,20 @@ var ApiRequest = /** @class */function () {
             headers: myHeaders
         };
         return fetch(this.urlPrefix2 + '/public/TypPraceUzivatele', myInit).then(function (response) {
+            return response.json();
+        }).then(function (data) {
+            console.log(data);
+            return data;
+        });
+    };
+    ApiRequest.prototype.getAllAuto = function () {
+        var myHeaders = new Headers();
+        myHeaders.append("Accept", "application/json");
+        var myInit = {
+            method: 'GET',
+            headers: myHeaders
+        };
+        return fetch(this.urlPrefix2 + '/public/Auto', myInit).then(function (response) {
             return response.json();
         }).then(function (data) {
             console.log(data);
@@ -32534,7 +32796,7 @@ var ObjednavkyModel = /** @class */function () {
     return ObjednavkyModel;
 }();
 exports.ObjednavkyModel = ObjednavkyModel;
-},{"mobx":14}],5:[function(require,module,exports) {
+},{"mobx":20}],5:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32665,13 +32927,23 @@ var UzivateleModel = /** @class */function () {
             });
         });
     };
+    UzivateleModel.prototype.getUzivatelByNickName = function (nick) {
+        return this.uzivatele.find(function (u) {
+            return u.nickName === nick;
+        });
+    };
+    UzivateleModel.prototype.getUzivatelId = function (uzivatelId) {
+        return this.uzivatele.find(function (u) {
+            return u.id === uzivatelId;
+        });
+    };
     __decorate([_mobx.observable], UzivateleModel.prototype, "loading", void 0);
     __decorate([_mobx.observable], UzivateleModel.prototype, "uzivatele", void 0);
     __decorate([_mobx.computed], UzivateleModel.prototype, "UzivatelAll", null);
     return UzivateleModel;
 }();
 exports.UzivateleModel = UzivateleModel;
-},{"mobx":14}],10:[function(require,module,exports) {
+},{"mobx":20}],21:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32830,13 +33102,13 @@ var DochazkaRowModel = /** @class */function () {
             });
         });
     };
-    DochazkaRowModel.prototype.stavChanged = function (stavName) {
+    DochazkaRowModel.prototype.stavChanged = function (stavId) {
         return __awaiter(this, void 0, void 0, function () {
             var newStav;
             return __generator(this, function (_a) {
-                console.log("Stav changed on dochazka id", this.dochazka.Uzivatel.nickName, "to state", stavName);
-                console.log("Should change stav in DB");
-                newStav = this.stavModel.getStavByName(stavName);
+                console.log("Stav changed on dochazka id", this.dochazka.Uzivatel.nickName, "to state", stavId);
+                console.log("Should change stav in DB", stavId);
+                newStav = this.stavModel.getStavById(stavId);
                 if (newStav != null) {
                     this.dochazka.StavUzivatele = newStav;
                 }
@@ -32852,7 +33124,7 @@ var DochazkaRowModel = /** @class */function () {
     return DochazkaRowModel;
 }();
 exports.DochazkaRowModel = DochazkaRowModel;
-},{"../Utils/ApiRequest":3,"mobx":14}],11:[function(require,module,exports) {
+},{"../Utils/ApiRequest":3,"mobx":20}],22:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32982,13 +33254,18 @@ var StavUzivateleModel = /** @class */function () {
             return f.nazevStavu == nazev;
         });
     };
+    StavUzivateleModel.prototype.getStavById = function (id) {
+        return this.array.find(function (f) {
+            return f.id == id;
+        });
+    };
     __decorate([_mobx.observable], StavUzivateleModel.prototype, "array", void 0);
     __decorate([_mobx.observable], StavUzivateleModel.prototype, "selected", void 0);
     __decorate([_mobx.action.bound], StavUzivateleModel.prototype, "stavChanged", null);
     return StavUzivateleModel;
 }();
 exports.StavUzivateleModel = StavUzivateleModel;
-},{"mobx":14}],12:[function(require,module,exports) {
+},{"mobx":20}],23:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33115,7 +33392,12 @@ var TypPraceUzivateleModel = /** @class */function () {
     };
     TypPraceUzivateleModel.prototype.getTypByName = function (nazev) {
         return this.array.find(function (f) {
-            return f.typPraceUzivatele == nazev;
+            return f.typPraceUzivatele === nazev;
+        });
+    };
+    TypPraceUzivateleModel.prototype.getTypById = function (typPraceId) {
+        return this.array.find(function (t) {
+            return t.id === typPraceId;
         });
     };
     __decorate([_mobx.observable], TypPraceUzivateleModel.prototype, "array", void 0);
@@ -33123,7 +33405,149 @@ var TypPraceUzivateleModel = /** @class */function () {
     return TypPraceUzivateleModel;
 }();
 exports.TypPraceUzivateleModel = TypPraceUzivateleModel;
-},{"mobx":14}],6:[function(require,module,exports) {
+},{"mobx":20}],115:[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.AutoModel = undefined;
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _mobx = require("mobx");
+
+var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
+    var c = arguments.length,
+        r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+        d;
+    if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
+        if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    }return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __awaiter = undefined && undefined.__awaiter || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) {
+            try {
+                step(generator.next(value));
+            } catch (e) {
+                reject(e);
+            }
+        }
+        function rejected(value) {
+            try {
+                step(generator["throw"](value));
+            } catch (e) {
+                reject(e);
+            }
+        }
+        function step(result) {
+            result.done ? resolve(result.value) : new P(function (resolve) {
+                resolve(result.value);
+            }).then(fulfilled, rejected);
+        }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = undefined && undefined.__generator || function (thisArg, body) {
+    var _ = { label: 0, sent: function sent() {
+            if (t[0] & 1) throw t[1];return t[1];
+        }, trys: [], ops: [] },
+        f,
+        y,
+        t,
+        g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function () {
+        return this;
+    }), g;
+    function verb(n) {
+        return function (v) {
+            return step([n, v]);
+        };
+    }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) {
+            try {
+                if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+                if (y = 0, t) op = [0, t.value];
+                switch (op[0]) {
+                    case 0:case 1:
+                        t = op;break;
+                    case 4:
+                        _.label++;return { value: op[1], done: false };
+                    case 5:
+                        _.label++;y = op[1];op = [0];continue;
+                    case 7:
+                        op = _.ops.pop();_.trys.pop();continue;
+                    default:
+                        if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
+                            _ = 0;continue;
+                        }
+                        if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
+                            _.label = op[1];break;
+                        }
+                        if (op[0] === 6 && _.label < t[1]) {
+                            _.label = t[1];t = op;break;
+                        }
+                        if (t && _.label < t[2]) {
+                            _.label = t[2];_.ops.push(op);break;
+                        }
+                        if (t[2]) _.ops.pop();
+                        _.trys.pop();continue;
+                }
+                op = body.call(thisArg, _);
+            } catch (e) {
+                op = [6, e];y = 0;
+            } finally {
+                f = t = 0;
+            }
+        }if (op[0] & 5) throw op[1];return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+var AutoModel = /** @class */function () {
+    function AutoModel(apiRequester) {
+        this.apiRequester = apiRequester;
+        this.load();
+    }
+    Object.defineProperty(AutoModel.prototype, "AutaAll", {
+        get: function get() {
+            return this.auta == null ? [] : this.auta;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    AutoModel.prototype.load = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.loading = true;
+                        return [4 /*yield*/, this.apiRequester.getAllAuto().then(function (data) {
+                            _this.auta = data;
+                        })];
+                    case 1:
+                        _a.sent();
+                        this.loading = false;
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    AutoModel.prototype.getAutoById = function (autoId) {
+        return this.auta.find(function (a) {
+            return a.id === autoId;
+        });
+    };
+    __decorate([_mobx.observable], AutoModel.prototype, "loading", void 0);
+    __decorate([_mobx.observable], AutoModel.prototype, "auta", void 0);
+    __decorate([_mobx.computed], AutoModel.prototype, "AutaAll", null);
+    return AutoModel;
+}();
+exports.AutoModel = AutoModel;
+},{"mobx":20}],6:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33132,6 +33556,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.DochazkaModel = undefined;
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _ApiRequest = require("../Utils/ApiRequest");
 
 var _mobx = require("mobx");
 
@@ -33142,6 +33568,8 @@ var _StavUzivateleModel = require("./StavUzivateleModel");
 var _TypPraceUzivateleModel = require("./TypPraceUzivateleModel");
 
 var _UzivateleModel = require("./UzivateleModel");
+
+var _AutoModel = require("./AutoModel");
 
 var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
     var c = arguments.length,
@@ -33239,6 +33667,7 @@ var DochazkaModel = /** @class */function () {
         this.stavModel = new _StavUzivateleModel.StavUzivateleModel(this.apiRequester);
         this.typPraceModel = new _TypPraceUzivateleModel.TypPraceUzivateleModel(this.apiRequester);
         this.uzivateleModel = new _UzivateleModel.UzivateleModel(this.apiRequester);
+        this.autoModel = new _AutoModel.AutoModel(this.apiRequester);
         this.load();
     }
     Object.defineProperty(DochazkaModel.prototype, "DochazkaAll", {
@@ -33278,7 +33707,37 @@ var DochazkaModel = /** @class */function () {
         enumerable: true,
         configurable: true
     });
-    DochazkaModel.prototype.prichodOsoby = function (idUzivatel, idTypPrace) {};
+    DochazkaModel.prototype.prichodOsoby = function (idUzivatel, idTypPrace, idAuto) {
+        return __awaiter(this, void 0, void 0, function () {
+            var now, nowFormatted, dto, createdDochazka;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        console.log("Should make prichod and DB prichod");
+                        this.loading = true;
+                        now = new Date();
+                        nowFormatted = _ApiRequest.ApiRequest.formatTimeToMysqlFormat(now);
+                        dto = {
+                            prichod: nowFormatted,
+                            odchod: null,
+                            idUzivatel: idUzivatel,
+                            idTypPraceUzivatele: idTypPrace,
+                            idStavUzivatele: "1",
+                            idAuto: idAuto
+                        };
+                        return [4 /*yield*/, this.apiRequester.postDochazka(dto)];
+                    case 1:
+                        createdDochazka = _a.sent();
+                        console.log("CREATED", createdDochazka);
+                        //update client
+                        this.dochazky.push(createdDochazka);
+                        this.dochazkyModels.push(new _DochazkaRowModel.DochazkaRowModel(createdDochazka, this.stavModel, this.apiRequester));
+                        this.loading = false;
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
     DochazkaModel.prototype.load = function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
@@ -33306,6 +33765,7 @@ var DochazkaModel = /** @class */function () {
     __decorate([_mobx.observable], DochazkaModel.prototype, "stavModel", void 0);
     __decorate([_mobx.observable], DochazkaModel.prototype, "typPraceModel", void 0);
     __decorate([_mobx.observable], DochazkaModel.prototype, "uzivateleModel", void 0);
+    __decorate([_mobx.observable], DochazkaModel.prototype, "autoModel", void 0);
     __decorate([_mobx.computed], DochazkaModel.prototype, "DochazkaAll", null);
     __decorate([_mobx.computed], DochazkaModel.prototype, "DochazkaRowModelsAll", null);
     __decorate([_mobx.computed], DochazkaModel.prototype, "DochazkaPritomni", null);
@@ -33314,7 +33774,7 @@ var DochazkaModel = /** @class */function () {
     return DochazkaModel;
 }();
 exports.DochazkaModel = DochazkaModel;
-},{"mobx":14,"../Models/DochazkaRowModel":10,"./StavUzivateleModel":11,"./TypPraceUzivateleModel":12,"./UzivateleModel":5}],1:[function(require,module,exports) {
+},{"../Utils/ApiRequest":3,"mobx":20,"../Models/DochazkaRowModel":21,"./StavUzivateleModel":22,"./TypPraceUzivateleModel":23,"./UzivateleModel":5,"./AutoModel":115}],1:[function(require,module,exports) {
 'use strict';
 
 var _react = require('react');
@@ -33345,7 +33805,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 var apiRequest = new _ApiRequest.ApiRequest();
 ReactDOM.render(React.createElement(_mobxReact.Provider, { objednavkyStore: new _ObjednavkyModel.ObjednavkyModel(apiRequest), uzivateleStore: new _UzivateleModel.UzivateleModel(apiRequest), dochazkaStore: new _DochazkaModel.DochazkaModel(apiRequest) }, React.createElement(_App2.default, null)), document.getElementById('root'));
-},{"react":7,"react-dom":9,"./App":2,"mobx-react":8,"./Utils/ApiRequest":3,"./Models/ObjednavkyModel":4,"./Models/UzivateleModel":5,"./Models/DochazkaModel":6}],109:[function(require,module,exports) {
+},{"react":8,"react-dom":7,"./App":2,"mobx-react":9,"./Utils/ApiRequest":3,"./Models/ObjednavkyModel":4,"./Models/UzivateleModel":5,"./Models/DochazkaModel":6}],116:[function(require,module,exports) {
 
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -33375,7 +33835,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '49204' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '54110' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -33514,5 +33974,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},[109,1])
+},{}]},{},[116,1])
 //# sourceMappingURL=/index.map
